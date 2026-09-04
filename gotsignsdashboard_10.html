@@ -1,0 +1,2663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Got Signs Inventory</title>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-title" content="Got Signs" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="theme-color" content="#10243f" />
+<meta name="format-detection" content="telephone=no" />
+<link rel="apple-touch-icon" href="data:image/png;base64,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" />
+<link rel="icon" href="data:image/png;base64,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" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/2.47.0/iconfont/tabler-icons.min.css" onerror="document.documentElement.classList.add('no-iconfont')" />
+<style>
+  * { box-sizing: border-box; }
+  html, body {
+    margin:0; padding:0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background:#eef1f4; color:#13233a;
+  }
+  .ti { font-family: 'tabler-icons' !important; font-style: normal; }
+  .no-iconfont .ti { display:none; }
+  button { cursor:pointer; font-family: inherit; }
+  input[type="number"], input[type="text"], select {
+    font-size:13px; padding:7px 9px; border-radius:6px; border:1px solid #d8dee5; background:#fff; color:#13233a; font-family: inherit;
+  }
+  :focus-visible{ outline:2px solid #1b62c4; outline-offset:2px; }
+  @media (prefers-reduced-motion: reduce){ *{ animation:none !important; transition:none !important; } }
+
+  #ds-savewarning { display:none; background:#fdf0cd; color:#5b4007; font-size:12px; padding:8px 14px; text-align:center; }
+
+  #ds-app { display:flex; min-height:100vh; background:#f4f6f8; padding-top:env(safe-area-inset-top); padding-left:env(safe-area-inset-left); padding-right:env(safe-area-inset-right); }
+  #ds-sidebar { width:200px; flex:0 0 200px; background:#10243f; color:#cdd9e8; padding:1.25rem 0; }
+  #ds-sidebar .ds-brand { display:flex; align-items:center; gap:8px; padding:0 1.1rem 1.1rem; border-bottom:1px solid #1d3454; margin-bottom:.6rem; }
+  #ds-sidebar .ds-brand-text { font-size:13px; font-weight:700; letter-spacing:.04em; color:#fff; line-height:1.3; text-transform:uppercase; }
+  #ds-sidebar .ds-brand-sub { font-size:10px; color:#7e93ad; letter-spacing:.03em; text-transform:uppercase; }
+  #ds-sidebar button.ds-navitem { width:100%; display:flex; align-items:center; gap:10px; text-align:left; background:transparent; border:none; border-radius:0; color:#a9bbd1; font-size:13px; padding:10px 1.1rem; }
+  #ds-sidebar button.ds-navitem.active { background:#1b62c4; color:#fff; }
+  #ds-sidebar button.ds-navitem:hover:not(.active) { background:#162d4a; }
+  .ds-navlabel{ flex:1; }
+  .ds-navbadge{ font-size:10px; font-weight:700; background:#1b62c4; color:#fff; border-radius:9px; padding:1px 7px; }
+  .ds-navitem.active .ds-navbadge{ background:#fff; color:#1b62c4; }
+
+  #ds-main { flex:1; min-width:0; background:#fff; padding:1.5rem 1.75rem; overflow:auto; perspective:1400px; }
+  #ds-main h1.ds-title { font-size:20px; font-weight:700; letter-spacing:.01em; margin:0 0 1rem; color:#13233a; text-transform:uppercase; }
+  .ds-titlebar { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:1rem; flex-wrap:wrap; }
+  .ds-print-btn { flex:0 0 auto; }
+
+  .ds-card { background:#fff; border:1px solid #e3e7ec; border-radius:8px; padding:1rem 1.1rem; margin-bottom:12px; }
+  .ds-card-title { font-size:11px; font-weight:700; letter-spacing:.04em; color:#5b6b80; text-transform:uppercase; margin-bottom:.65rem; }
+  .ds-card p { margin:0 0 .6rem; }
+  .ds-card p:last-child { margin-bottom:0; }
+
+  .ds-badge { font-size:11px; font-weight:700; padding:4px 9px; border-radius:5px; letter-spacing:.02em; text-transform:uppercase; display:inline-block; white-space:nowrap; }
+  .ds-badge-optimal { background:#dcf3e3; color:#1d7a3f; }
+  .ds-badge-low { background:#fbdcdc; color:#b3261e; }
+  .ds-badge-warning { background:#fdf0cd; color:#92660a; }
+
+  .ds-dot{ width:10px; height:10px; border-radius:50%; display:inline-block; }
+  .ds-dot-low{ background:#d9453c; }
+  .ds-dot-warning{ background:#f2b33d; }
+  .ds-dot-optimal{ background:#2f9757; }
+
+  .ds-table { width:100%; font-size:12.5px; border-collapse:collapse; }
+  .ds-table th { text-align:left; font-size:10.5px; letter-spacing:.04em; text-transform:uppercase; color:#7c8a9b; padding:6px 8px; border-bottom:1px solid #e3e7ec; font-weight:700; }
+  .ds-table td { padding:8px; border-bottom:1px solid #eef1f4; color:#13233a; vertical-align:middle; }
+  .ds-clickable-row{ cursor:pointer; }
+  .ds-clickable-row:hover td{ background:#f4f6f8; }
+
+  .ds-tabs-row { display:flex; gap:6px; margin-bottom:1rem; flex-wrap:wrap; }
+  .ds-tab-pill { font-size:12px; font-weight:600; padding:6px 13px; border-radius:6px; border:1px solid #d8dee5; background:#fff; color:#445063; }
+  .ds-tab-pill.active { background:#13233a; color:#fff; border-color:#13233a; }
+
+  .ds-btn-primary { font-size:13px; padding:9px 16px; font-weight:600; background:#1b62c4; color:#fff; border:none; border-radius:6px; }
+  .ds-btn-outline { font-size:12.5px; padding:7px 13px; font-weight:600; background:#fff; border:1px solid #d8dee5; border-radius:6px; color:#445063; }
+  .ds-searchbar { display:flex; gap:10px; margin-bottom:1.1rem; }
+  .ds-searchbar input { flex:1; font-size:13px; padding:9px 12px; }
+  .ds-empty{ color:#7c8a9b; font-size:13px; padding:1.4rem 0; text-align:center; }
+  .ds-item-name{ font-weight:600; font-size:13.5px; color:#13233a; }
+  .ds-item-specs{ font-size:11.5px; color:#7c8a9b; font-style:italic; }
+
+  /* ---- status buttons ---- */
+  .ds-statusrow{ display:flex; gap:12px; margin-bottom:1.5rem; }
+  .ds-statusbtn{ flex:1; border:none; border-radius:8px; padding:16px 14px; text-align:left; color:#fff; }
+  .ds-statusbtn .ds-statusnum{ font-size:26px; font-weight:800; line-height:1; }
+  .ds-statusbtn .ds-statuslabel{ font-size:12px; font-weight:600; margin-top:4px; opacity:.95; }
+  .ds-statusbtn-red{ background:#d9453c; }
+  .ds-statusbtn-red:hover{ background:#c23b33; }
+  .ds-statusbtn-yellow{ background:#f2b33d; color:#3a2c06; }
+  .ds-statusbtn-yellow:hover{ background:#e0a52f; }
+  .ds-statusbtn-green{ background:#2f9757; }
+  .ds-statusbtn-green:hover{ background:#277e49; }
+
+  /* ---- category boxes (dashboard) ---- */
+  .ds-catgrid{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .ds-catbox{ background:#fff; border:1px solid #e3e7ec; border-radius:10px; padding:1.6rem 1.4rem; text-align:left; min-height:130px; display:flex; flex-direction:column; justify-content:space-between; transition:transform .2s ease, opacity .2s ease, box-shadow .2s ease; }
+  .ds-catbox:hover{ box-shadow:0 4px 14px rgba(19,35,58,.1); transform:translateY(-2px); }
+  .ds-catbox.flipping-out{ transform:rotateY(90deg) scale(.94); opacity:0; }
+  .ds-catbox-icon{ color:#1b62c4; font-size:26px; }
+  .ds-catbox-name{ font-size:17px; font-weight:700; color:#13233a; margin-top:10px; }
+  .ds-catbox-sub{ font-size:12px; color:#7c8a9b; margin-top:4px; }
+
+  .ds-category-panel{ animation: ds-flip-in .28s ease both; }
+  @keyframes ds-flip-in{ from{ transform:rotateY(-18deg) scale(.98); opacity:0; } to{ transform:none; opacity:1; } }
+
+  .ds-order-link{ display:inline-flex; align-items:center; gap:6px; font-size:12.5px; font-weight:600; padding:6px 11px; border-radius:6px; border:1px solid #d8dee5; background:#fff; color:#1b62c4; text-decoration:none; margin:3px 6px 3px 0; }
+  .ds-order-link:hover{ background:#f0f5fc; }
+  .ds-order-link-primary{ background:#1b62c4; color:#fff; border-color:#1b62c4; }
+  .ds-order-link-primary:hover{ background:#154f9e; }
+  .ds-bigcta{ display:flex; align-items:center; justify-content:center; gap:10px; width:100%; margin-top:1.75rem; padding:30px; background:#1b62c4; color:#fff; border:none; border-radius:10px; font-size:19px; font-weight:700; text-transform:uppercase; letter-spacing:.03em; }
+  .ds-bigcta:hover{ background:#154f9e; }
+  .ds-bigcta .ti{ font-size:24px; }
+  .ds-best{ font-size:9.5px; background:#dcf3e3; color:#1d7a3f; padding:1px 6px; border-radius:3px; text-transform:uppercase; letter-spacing:.03em; margin-left:4px; }
+
+  .ds-missing-banner{ display:flex; align-items:flex-start; gap:12px; background:#fbdcdc; border:1px solid #f3b7b2; border-radius:8px; padding:.9rem 1.1rem; margin-bottom:1.25rem; }
+  .ds-missing-banner .ti{ color:#b3261e; font-size:20px; margin-top:1px; }
+  .ds-missing-banner-title{ font-weight:700; font-size:13.5px; color:#7a1d16; }
+  .ds-missing-banner-list{ font-size:12.5px; color:#8a2b23; margin-top:2px; }
+  .ds-missing-banner a{ font-size:12px; font-weight:700; color:#7a1d16; white-space:nowrap; margin-left:auto; }
+
+  .ds-tracking-row{ display:flex; align-items:center; gap:10px; margin-top:10px; flex-wrap:wrap; }
+  .ds-tracking-row label{ font-size:11.5px; color:#7c8a9b; }
+  .ds-tracking-row input{ width:180px; }
+  .ds-undo-link{ font-size:11px; color:#7c8a9b; text-decoration:underline; background:none; border:none; padding:0; }
+  .ds-editable-preset{ cursor:pointer; padding:5px 8px; border-radius:5px; border:1px dashed transparent; display:inline-block; color:#13233a; }
+  .ds-editable-preset:hover{ background:#f4f6f8; border-color:#d8dee5; }
+  .ds-editable-preset:focus-visible{ outline:2px solid #1b62c4; outline-offset:1px; }
+  .ds-editable-preset.ds-placeholder{ color:#9aa5b1; font-style:italic; }
+  .ds-modal-overlay{ position:fixed; inset:0; background:rgba(19,35,58,.55); display:flex; align-items:center; justify-content:center; z-index:1000; padding:20px; }
+  .ds-modal{ background:#fff; border-radius:10px; padding:1.3rem 1.4rem; max-width:560px; width:100%; max-height:85vh; overflow:auto; }
+  .ds-modal h2{ font-size:16px; margin:0 0 .5rem; color:#13233a; }
+  .ds-modal p{ font-size:12.5px; color:#5b6b80; margin:0 0 .8rem; line-height:1.5; }
+  .ds-modal textarea{ width:100%; height:220px; font-family:'SFMono-Regular',Consolas,monospace; font-size:11px; padding:8px; border-radius:6px; border:1px solid #d8dee5; resize:vertical; }
+  .ds-modal-actions{ display:flex; justify-content:flex-end; gap:8px; margin-top:12px; flex-wrap:wrap; }
+
+  @media (max-width: 720px) {
+    #ds-app { flex-direction:column; }
+    #ds-sidebar { width:100%; flex:none; display:flex; align-items:center; padding:.6rem .75rem; gap:4px; overflow-x:auto; }
+    #ds-sidebar .ds-brand { border-bottom:none; border-right:1px solid #1d3454; margin-bottom:0; padding:0 .75rem; flex:0 0 auto; }
+    #ds-sidebar button.ds-navitem { width:auto; padding:8px 10px; white-space:nowrap; }
+    #ds-main { padding:1.1rem; }
+    .ds-statusrow{ flex-direction:column; }
+    .ds-catgrid{ grid-template-columns:1fr; }
+  }
+
+  @media print {
+    body { background:#fff; }
+    #ds-savewarning, #ds-sidebar, .ds-print-btn, .ds-searchbar, .ds-tabs-row, .ds-bigcta, button[data-action] { display:none !important; }
+    #ds-app { display:block; padding:0; }
+    #ds-main { padding:0; overflow:visible; }
+    .ds-titlebar { margin-bottom:.5rem; }
+    .ds-card { border:1px solid #ccc; break-inside:avoid; }
+  }
+</style>
+</head>
+<body>
+<div id="ds-savewarning">Your browser is blocking local storage for this file (private/incognito mode, or storage disabled). Changes won't be saved between visits.</div>
+<div id="ds-root">
+  <div style="padding:3rem;text-align:center;color:#7c8a9b;font-size:14px;">Loading inventory…</div>
+</div>
+
+<script>
+(function(){
+
+/* ============================================================
+   CONSTANTS — same catalog data as the original inventory app,
+   with a category assigned to each item
+   ============================================================ */
+var TIERS = {
+  weekly:  { label: "Weekly" },
+  monthly: { label: "Monthly" },
+  quarterly: { label: "Quarterly" }
+};
+var CATEGORY_LABELS = { vinyl:"Vinyls", supply:"Supplies", substrate:"Substrates", hardware:"Hardware" };
+var CATEGORY_ORDER = ["vinyl","supply","substrate","hardware"];
+var CATEGORY_ICONS = { vinyl:"ti-stack-2", supply:"ti-flask", substrate:"ti-square", hardware:"ti-bolt" };
+
+var VENDOR_WEBSITES = {
+  "Fellers": "https://fellers.com/",
+  "Grimco": "https://www.grimco.com/",
+  "Reece Supply": "https://www.reecesupply.com/",
+  "Allied Plastics": "https://alliedplasticsupply.com/locations/houston/",
+  "Ac Plastics": "https://www.acplasticsinc.com/",
+  "Grainger": "https://www.grainger.com/"
+};
+
+var FELLERS_IMPORT_DATA = [
+  {name:"Avery SW900 Wrapping Film - Matte Gunmetal Metallic 840M (60x25)", unit:"roll", tier:"weekly", par:5, reorder:2, qty:25, price:25.57},
+  {name:"Avery SW900 Wrapping Film - Gloss Dark Blue 681 (60x25)", unit:"roll", tier:"weekly", par:5, reorder:2, qty:25, price:25.57},
+  {name:"GF 790AE Print-N-Privacy Etched Glass Film (60x150)", unit:"roll", tier:"weekly", par:5, reorder:2, qty:1, price:955.09},
+  {name:"GF 790AE Print-N-Privacy Etched Glass Film (54x150)", unit:"roll", tier:"weekly", par:5, reorder:2, qty:1, price:778.95},
+  {name:"Fellers Black Label Paint Mask - Yellow (48x50)", unit:"roll", tier:"weekly", par:5, reorder:2, qty:1, price:334.00},
+  {name:"Fellers Black Label Paint Mask - Yellow (30x50)", unit:"roll", tier:"weekly", par:5, reorder:2, qty:1, price:201.50},
+  {name:"ORACAL 651 Metallic Sign Vinyl - Gold Metallic 091 (24x50)", unit:"roll", tier:"weekly", par:5, reorder:2, qty:50, price:3.49},
+  {name:"ORAJET 3169RA Print Film - Matte (54x150)", unit:"roll", tier:"weekly", par:5, reorder:2, qty:1, price:319.27},
+  {name:"ORAGUARD 210 Overlaminate - Matte (54x150)", unit:"roll", tier:"weekly", par:5, reorder:2, qty:2, price:286.37},
+  {name:"Avery SW900 Wrapping Film - Gloss Dark Grey 865 (60x25)", unit:"roll", tier:"weekly", par:5, reorder:2, qty:25, price:26.33},
+  {name:"GF 270 WindowMark Perforated Window Film (54x100)", unit:"roll", tier:"weekly", par:5, reorder:2, qty:2, price:586.63},
+  {name:"Avery SW900 Wrapping Film - Gloss Dark Yellow 245/249 (60x25)", unit:"roll", tier:"weekly", par:5, reorder:2, qty:1, price:654.75},
+  {name:"3M IJ180Cv3 Print Wrap Film (54x150)", unit:"roll", tier:"weekly", par:5, reorder:2, qty:2, price:881.00},
+  {name:"ORAGUARD 210 Overlaminate - Gloss (54x150)", unit:"roll", tier:"weekly", par:5, reorder:2, qty:2, price:282.87},
+  {name:"3M Wrap Film 2080 Matte - Deep Black M22 (60in, by ft)", unit:"ft", tier:"weekly", par:5, reorder:2, qty:9, price:10.05},
+  {name:"3M Wrap Film 2080 Matte - Military Green M26 (60in, by ft)", unit:"ft", tier:"weekly", par:5, reorder:2, qty:9, price:10.05}
+];
+
+var ITEM_SPECS = {
+  "3M IJ180CV3 54x150": "White \u00b7 54in x 150ft (50yd)",
+  "Avery MPI 1105 Cast Vinyl 54in": "54in x 150ft (50yd)",
+  "Gloss Overlaminate 54in": "54in x 150ft (50yd)",
+  "VHB Mounting Tape 1in": "1in x 36yd (108ft)",
+  "3M 8518-54x50": "Clear gloss overlaminate \u00b7 54in x 50yd (150ft)",
+  "3M IJ35C-10-60x50": "Gloss white printable vinyl film w/ Comply adhesive \u00b7 60in x 50yd (150ft)",
+  "3M 8509 60x50": "Luster overlaminate \u00b7 60in x 50yd (150ft)",
+  "Kommerling Komalite PVC White 4x8x3mm": "White foamed PVC sheet \u00b7 4ft x 8ft, 3mm thick",
+  "Avery SW900 Wrapping Film - Matte Gunmetal Metallic 840M (60x25)": "Matte gunmetal metallic cast wrap film \u00b7 60in x 25yd (75ft)",
+  "Avery SW900 Wrapping Film - Gloss Dark Blue 681 (60x25)": "Gloss dark blue cast wrap film \u00b7 60in x 25yd (75ft)",
+  "GF 790AE Print-N-Privacy Etched Glass Film (60x150)": "3 Mil etched-glass privacy film \u00b7 60in x 150ft (50yd)",
+  "GF 790AE Print-N-Privacy Etched Glass Film (54x150)": "3 Mil etched-glass privacy film \u00b7 54in x 150ft (50yd)",
+  "Fellers Black Label Paint Mask - Yellow (48x50)": "3.2 Mil paint mask, yellow \u00b7 48in x 50yd (150ft)",
+  "Fellers Black Label Paint Mask - Yellow (30x50)": "3.2 Mil paint mask, yellow \u00b7 30in x 50yd (150ft)",
+  "ORACAL 651 Metallic Sign Vinyl - Gold Metallic 091 (24x50)": "2.5 Mil metallic sign vinyl, gold \u00b7 24in x 50yd (150ft)",
+  "ORAJET 3169RA Print Film - Matte (54x150)": "4 Mil matte print film \u00b7 54in x 150ft (50yd)",
+  "ORAGUARD 210 Overlaminate - Matte (54x150)": "2.5 Mil matte overlaminate \u00b7 54in x 150ft (50yd)",
+  "Avery SW900 Wrapping Film - Gloss Dark Grey 865 (60x25)": "Gloss dark grey cast wrap film \u00b7 60in x 25yd (75ft)",
+  "GF 270 WindowMark Perforated Window Film (54x100)": "6 Mil perforated (70/30) window print film \u00b7 54in x 100ft (33.3yd)",
+  "Avery SW900 Wrapping Film - Gloss Dark Yellow 245/249 (60x25)": "Gloss dark yellow cast wrap film \u00b7 60in x 25yd (75ft)",
+  "ORAGUARD 210 Overlaminate - Gloss (54x150)": "2.5 Mil gloss overlaminate \u00b7 54in x 150ft (50yd)",
+  "3M Wrap Film 2080 Matte - Deep Black M22 (60in, by ft)": "3.5 Mil matte cast wrap film, deep black \u00b7 60in wide, sold by linear ft (3ft min)",
+  "3M Wrap Film 2080 Matte - Military Green M26 (60in, by ft)": "3.5 Mil matte cast wrap film, military green \u00b7 60in wide, sold by linear ft (3ft min)"
+};
+
+var LOGO_SVG = '<svg viewBox="0 0 1024 1024" width="30" height="30" aria-hidden="true">' +
+  '<path fill="#fff" d="M329.22,512.25c0-95.23,1.51-107.32,6.55-122.44c11.08-33.76,38.8-53.41,81.12-53.41c49.38,0,79.61,26.2,85.15,80.11c0.5,3.02-1.51,5.54-4.03,6.05l-40.81,7.05c-3.02,0.5-5.04-1.01-5.54-4.03c-2.52-26.7-14.11-40.31-34.26-40.31c-14.61,0-26.2,7.56-29.73,19.15c-3.02,9.57-3.53,13.6-3.53,107.83c0,94.22,0.5,98.25,3.53,107.83c3.53,11.59,16.12,19.15,30.23,19.15c14.61,0,27.21-7.56,30.73-19.15c2.52-8.57,3.53-13.61,3.53-77.09c0-2.01-1.01-3.02-3.02-3.02h-26.7c-3.02,0-5.04-2.02-5.04-5.04v-37.29c0-3.02,2.02-5.04,5.04-5.04h76.59c3.02,0,5.04,2.01,5.04,5.04v15.12c0,94.72-1.51,106.82-6.55,121.93c-11.08,33.76-38.8,53.41-80.62,53.41c-42.32,0-70.04-19.65-81.12-53.41C330.73,619.57,329.22,607.48,329.22,512.25z"/>' +
+  '<path fill="#fff" d="M607.48,688.1c-55.42,0-84.14-29.73-85.66-89.69c0-3.02,1.01-5.04,4.03-5.54l42.32-7.05c3.53-0.5,5.54,1.51,5.54,4.53c1.51,36.28,12.09,50.39,35.27,50.39c21.67,0,32.25-11.59,32.25-48.87c0-36.78-7.05-48.87-33.76-59.46l-20.66-8.06c-47.36-18.64-61.47-43.33-61.47-96.74c0-58.95,26.7-91.2,83.14-91.2c56.43,0,81.12,30.23,84.14,83.64c0,3.02-1.51,4.53-4.54,5.54l-40.31,6.05c-3.02,0.5-5.54-1.01-5.54-4.03c-1.01-28.22-10.08-43.84-32.25-43.84c-21.16,0-31.24,13.1-31.24,41.32c0,31.74,6.05,41.32,33.25,51.9l20.66,8.06c44.84,17.64,62.48,41.82,62.48,100.27C695.15,652.83,672.48,688.1,607.48,688.1z"/>' +
+  '<path fill="#06ABEC" d="M512.19,1012.25c-275.7,0-500-224.3-500-500c0-275.7,224.3-500,500-500s500,224.3,500,500C1012.19,787.95,787.89,1012.25,512.19,1012.25z M512.19,89.59c-233.06,0-422.66,189.61-422.66,422.66c0,233.06,189.6,422.66,422.66,422.66s422.66-189.61,422.66-422.66C934.85,279.2,745.24,89.59,512.19,89.59z"/>' +
+  '</svg>';
+
+/* ============================================================
+   STORAGE — separate key prefix, no collision with other versions
+   ============================================================ */
+var STORAGE_PREFIX = "got_signs_dashboard_v1:";
+var storageWorks = true;
+function lsGet(key, fallback){
+  try{
+    var raw = localStorage.getItem(STORAGE_PREFIX+key);
+    return raw!==null ? JSON.parse(raw) : fallback;
+  }catch(e){ storageWorks = false; return fallback; }
+}
+function lsSet(key, value){
+  try{ localStorage.setItem(STORAGE_PREFIX+key, JSON.stringify(value)); }
+  catch(e){ storageWorks = false; showSaveWarning(); }
+}
+function showSaveWarning(){
+  var w = document.getElementById("ds-savewarning");
+  if (w) w.style.display = "block";
+}
+
+/* ============================================================
+   DATA
+   ============================================================ */
+var DB = { items: [], vendors: [], itemVendors: [], pos: [], poLines: [], purchasedItems: [], receivedItems: [], catalogedItemIds: [], priceChanges: [] };
+function uid(p){ return p + "_" + Math.random().toString(36).slice(2,10); }
+
+function sampleData(){
+  var v1 = {id: uid("v"), name:"Fellers", website:"https://fellers.com/", contact:"800-654-8405", contactName:""};
+  var v2 = {id: uid("v"), name:"Grimco", website:"https://www.grimco.com/", contact:"314-667-5477", contactName:"John Hughes"};
+  var v3 = {id: uid("v"), name:"Reece Supply", website:"https://www.reecesupply.com/", contact:"713-228-9496", contactName:"Randy Denny"};
+  var v4 = {id: uid("v"), name:"Allied Plastics", website:"https://alliedplasticsupply.com/locations/houston/", contact:"", contactName:""};
+  var v5 = {id: uid("v"), name:"Ac Plastics", website:"https://www.acplasticsinc.com/", contact:"713-358-6301", contactName:"Erick"};
+  var v6 = {id: uid("v"), name:"Grainger", website:"https://www.grainger.com/", contact:"", contactName:""};
+  var vendors = [v1,v2,v3,v4,v5,v6];
+
+  var items = [
+    {id: uid("i"), name:"3M IJ180CV3 54x150", unit:"roll", tier:"weekly", par:8, reorder:3, qty:8, specs:"White \u00b7 54in x 150ft (50yd)", category:"vinyl"},
+    {id: uid("i"), name:"Avery MPI 1105 Cast Vinyl 54in", unit:"roll", tier:"weekly", par:6, reorder:2, qty:1, category:"vinyl"},
+    {id: uid("i"), name:"Mimaki BS4 Cyan Ink", unit:"cartridge", tier:"weekly", par:6, reorder:2, qty:2, category:"supply"},
+    {id: uid("i"), name:"Mimaki BS4 Magenta Ink", unit:"cartridge", tier:"weekly", par:6, reorder:2, qty:5, category:"supply"},
+    {id: uid("i"), name:"Gloss Overlaminate 54in", unit:"roll", tier:"weekly", par:5, reorder:2, qty:1, category:"vinyl"},
+    {id: uid("i"), name:"Isopropyl Alcohol 99%", unit:"gallon", tier:"monthly", par:6, reorder:2, qty:2, category:"supply"},
+    {id: uid("i"), name:"Lint-Free Application Towels", unit:"case", tier:"monthly", par:4, reorder:1, qty:1, category:"supply"},
+    {id: uid("i"), name:"Squeegee Blades (felt edge)", unit:"box", tier:"monthly", par:5, reorder:2, qty:4, category:"supply"},
+    {id: uid("i"), name:"Propane Tank 20lb (torch)", unit:"tank", tier:"monthly", par:4, reorder:1, qty:0, category:"supply"},
+    {id: uid("i"), name:"M5 Stainless Fasteners", unit:"box", tier:"quarterly", par:4, reorder:1, qty:3, category:"hardware"},
+    {id: uid("i"), name:"VHB Mounting Tape 1in", unit:"roll", tier:"quarterly", par:6, reorder:2, qty:1, category:"supply"},
+    {id: uid("i"), name:"CNC Upcut Bit 1/4in", unit:"each", tier:"quarterly", par:6, reorder:2, qty:2, category:"hardware"},
+    {id: uid("i"), name:"Construction Adhesive", unit:"tube", tier:"quarterly", par:8, reorder:3, qty:6, category:"supply"},
+    {id: uid("i"), name:"3M 8518-54x50", unit:"roll", tier:"weekly", par:5, reorder:2, qty:1, category:"vinyl"},
+    {id: uid("i"), name:"3M IJ35C-10-60x50", unit:"roll", tier:"weekly", par:5, reorder:2, qty:1, category:"vinyl"},
+    {id: uid("i"), name:"3M 8509 60x50", unit:"roll", tier:"weekly", par:5, reorder:2, qty:1, category:"vinyl"},
+    {id: uid("i"), name:"Kommerling Komalite PVC White 4x8x3mm", unit:"sheet", tier:"quarterly", par:10, reorder:3, qty:5, category:"substrate"}
+  ];
+
+  var itemVendors = [];
+  function link(itemIdx, vendorObj, price){
+    itemVendors.push({id: uid("iv"), itemId: items[itemIdx].id, vendorId: vendorObj.id, price: price});
+  }
+  link(0, v3, 783.17); link(0, v1, 881.00);
+  link(1, v3, 142.00); link(1, v1, 149.99);
+  link(2, v2, 38.75);
+  link(3, v2, 38.75);
+  link(4, v3, 96.00); link(4, v1, 102.50);
+  link(5, v6, 24.10);
+  link(6, v6, 31.40);
+  link(7, v6, 18.95);
+  link(8, v6, 42.00);
+  link(9, v6, 12.20);
+  link(10, v1, 21.00);
+  link(11, v6, 9.75);
+  link(12, v6, 6.40);
+  link(13, v3, 577.97);
+  link(14, v3, 280.03);
+  link(15, v3, 331.91);
+  link(16, v3, 37.75);
+
+  FELLERS_IMPORT_DATA.forEach(function(d){
+    if (d.name === "3M IJ180Cv3 Print Wrap Film (54x150)") return;
+    var it = {id: uid("i"), name:d.name, unit:d.unit, tier:d.tier, par:d.par, reorder:d.reorder, qty:d.qty, category:"vinyl"};
+    items.push(it);
+    itemVendors.push({id: uid("iv"), itemId: it.id, vendorId: v1.id, price: d.price});
+  });
+
+  items.forEach(function(it){
+    if (!it.specs && ITEM_SPECS[it.name]) it.specs = ITEM_SPECS[it.name];
+  });
+
+  return {items: items, vendors: vendors, itemVendors: itemVendors, pos: [], poLines: [], purchasedItems: [], receivedItems: [], catalogedItemIds: [], priceChanges: []};
+}
+
+/* ============================================================
+   PERSISTENCE
+   ============================================================ */
+function loadDB(){
+  var seeded = lsGet("seeded_v1", null);
+  if (!seeded){
+    DB = sampleData();
+    persist("items"); persist("vendors"); persist("itemVendors"); persist("pos"); persist("poLines"); persist("purchasedItems"); persist("receivedItems"); persist("catalogedItemIds"); persist("priceChanges");
+    lsSet("seeded_v1", true);
+  } else {
+    DB.items = lsGet("items", []);
+    DB.vendors = lsGet("vendors", []);
+    DB.itemVendors = lsGet("itemVendors", []);
+    DB.pos = lsGet("pos", []);
+    DB.poLines = lsGet("poLines", []);
+    DB.purchasedItems = lsGet("purchasedItems", []);
+    DB.receivedItems = lsGet("receivedItems", []);
+    DB.catalogedItemIds = lsGet("catalogedItemIds", []);
+    DB.priceChanges = lsGet("priceChanges", []);
+    backfillOrderData();
+  }
+}
+function backfillOrderData(){
+  var changed = false, vendorsChanged = false;
+  DB.vendors.forEach(function(v){
+    if (v.contactName == null){ v.contactName = ""; vendorsChanged = true; }
+  });
+  DB.pos.forEach(function(po){
+    if (po.orderNumber == null){ po.orderNumber = nextOrderNumber(); changed = true; }
+  });
+  DB.poLines.forEach(function(line){
+    if (!line.name){
+      var it = itemById(line.itemId);
+      if (it){ line.name = it.name; changed = true; }
+    }
+  });
+  if (changed){ persist("pos"); persist("poLines"); }
+  if (vendorsChanged){ persist("vendors"); }
+}
+function persist(part){
+  if (part==="items") lsSet("items", DB.items);
+  if (part==="vendors") lsSet("vendors", DB.vendors);
+  if (part==="itemVendors") lsSet("itemVendors", DB.itemVendors);
+  if (part==="pos") lsSet("pos", DB.pos);
+  if (part==="poLines") lsSet("poLines", DB.poLines);
+  if (part==="purchasedItems") lsSet("purchasedItems", DB.purchasedItems);
+  if (part==="receivedItems") lsSet("receivedItems", DB.receivedItems);
+  if (part==="catalogedItemIds") lsSet("catalogedItemIds", DB.catalogedItemIds);
+  if (part==="priceChanges") lsSet("priceChanges", DB.priceChanges);
+}
+
+/* ============================================================
+   HELPERS
+   ============================================================ */
+function itemById(id){ return DB.items.find(function(i){return i.id===id;}); }
+function vendorById(id){ return DB.vendors.find(function(v){return v.id===id;}); }
+function vendorsForItem(itemId){
+  return DB.itemVendors.filter(function(iv){return iv.itemId===itemId;}).map(function(iv){
+    var v = vendorById(iv.vendorId);
+    return {vendorId: iv.vendorId, vendorName: v?v.name:"Unknown", website: v?v.website:"", price: iv.price};
+  }).sort(function(a,b){return a.price-b.price;});
+}
+function fmt$(n){ return "$" + (Math.round(n*100)/100).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2}); }
+function escapeHtml(s){ return String(s==null?"":s).replace(/[&<>]/g, function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;"}[c];}); }
+function escapeAttr(s){ return escapeHtml(s).replace(/"/g,"&quot;"); }
+
+function stockStatus(it){
+  if (it.qty <= it.reorder) return "low";
+  if (it.qty <= it.reorder + Math.max(1, Math.round((it.par-it.reorder)*0.4))) return "warning";
+  return "optimal";
+}
+function statusRank(s){ return s==="low"?0:(s==="warning"?1:2); }
+function badgeForStatus(s){
+  if (s==="low") return '<span class="ds-badge ds-badge-low">Low</span>';
+  if (s==="warning") return '<span class="ds-badge ds-badge-warning">Warning</span>';
+  return '<span class="ds-badge ds-badge-optimal">Optimal</span>';
+}
+function dotForStatus(s){
+  var cls = s==="low"?"ds-dot-low":(s==="warning"?"ds-dot-warning":"ds-dot-optimal");
+  return '<span class="ds-dot '+cls+'" aria-hidden="true"></span>';
+}
+function needed(it){ return Math.max(0, it.par - it.qty); }
+
+function sortByUrgency(list){
+  return list.slice().sort(function(a,b){
+    var ra = statusRank(stockStatus(a)), rb = statusRank(stockStatus(b));
+    if (ra!==rb) return ra-rb;
+    var da = a.qty - a.reorder, db = b.qty - b.reorder;
+    if (da!==db) return da-db;
+    return a.name.localeCompare(b.name);
+  });
+}
+function countByStatus(list, s){ return list.filter(function(it){ return stockStatus(it)===s; }).length; }
+
+/* Reorder-tab sort helpers */
+function lastPurchasedDateForItem(itemId){
+  var latest = null;
+  DB.purchasedItems.forEach(function(p){ if (p.itemId===itemId && p.purchasedDate && (!latest || p.purchasedDate>latest)) latest = p.purchasedDate; });
+  DB.receivedItems.forEach(function(r){ if (r.itemId===itemId && r.purchasedDate && (!latest || r.purchasedDate>latest)) latest = r.purchasedDate; });
+  return latest;
+}
+function purchaseFrequencyForItem(itemId){
+  var n = 0;
+  DB.purchasedItems.forEach(function(p){ if (p.itemId===itemId) n++; });
+  DB.receivedItems.forEach(function(r){ if (r.itemId===itemId) n++; });
+  return n;
+}
+function latestPriceChangeForItem(itemId){
+  var changes = DB.priceChanges.filter(function(c){ return c.itemId===itemId; });
+  if (!changes.length) return null;
+  changes = changes.slice().sort(function(a,b){ return (a.date||"").localeCompare(b.date||""); });
+  return changes[changes.length-1];
+}
+
+function todayStr(){ var d=new Date(); return d.toISOString().slice(0,10); }
+function fmtDate(s){
+  if (!s) return "\u2014";
+  var d = new Date(s+"T00:00:00");
+  if (isNaN(d.getTime())) return s;
+  var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  return d.getDate()+" "+months[d.getMonth()]+" "+d.getFullYear();
+}
+function poById(id){ return DB.pos.find(function(p){return p.id===id;}); }
+function linesForPO(id){ return DB.poLines.filter(function(l){return l.poId===id;}); }
+
+/* An item is "committed" to an open order if it has a line that isn't yet
+   confirmed received, on a PO that hasn't been cancelled — whether that PO
+   is still awaiting purchase ("created") or is a leftover unpurchased order
+   ("unpurchased"). Committed items are skipped when generating new purchase
+   orders from the Catalog, so nothing gets ordered twice. */
+function committedItemIds(){
+  var set = {};
+  DB.poLines.forEach(function(l){
+    var po = poById(l.poId);
+    if (po && (po.status==="created" || po.status==="unpurchased")) set[l.itemId] = true;
+  });
+  return set;
+}
+
+function nextOrderNumber(){
+  var n = lsGet("orderCounter", 1000) + 1;
+  lsSet("orderCounter", n);
+  return n;
+}
+
+/* Toggles an item's "verified today" checkbox on the Catalog tab — the user
+   is confirming they've physically counted it and the on-hand number shown
+   is correct. This is a manual check, not tied to editing the quantity, so
+   nothing gets swept into a purchase order without the user explicitly
+   signing off on the count first. */
+function toggleCatalogVerified(itemId, verified){
+  var idx = DB.catalogedItemIds.indexOf(itemId);
+  if (verified && idx===-1){
+    DB.catalogedItemIds.push(itemId);
+    persist("catalogedItemIds");
+  } else if (!verified && idx>-1){
+    DB.catalogedItemIds.splice(idx,1);
+    persist("catalogedItemIds");
+  }
+}
+
+/* Turns every currently-verified item that still needs restocking into
+   purchase order lines, grouped by cheapest vendor, merging into an existing
+   "created" PO for that vendor if one exists, or creating a new one. A
+   verified item that's already fully stocked (needed(it)===0) is simply
+   skipped — checking the box confirms the count, it doesn't force an order.
+   Items already committed to another open order are skipped (no duplicate
+   ordering); items with no vendor pricing on file still get added, grouped
+   into a shared order so the user can assign one. Clears the verified list
+   afterward either way, since this is a snapshot of today's count. */
+function createPurchaseOrderFromCatalog(){
+  var ids = DB.catalogedItemIds.slice();
+  if (!ids.length){
+    alert("No items have been checked off yet. Count an item on the Catalog tab and check its box to confirm the number, then try again.");
+    return;
+  }
+  var committed = committedItemIds();
+  var addedCount = 0;
+  var addedNoVendor = [];
+  var skippedStocked = 0;
+  ids.forEach(function(itemId){
+    var it = itemById(itemId);
+    if (!it) return;
+    if (needed(it)<=0){ skippedStocked++; return; }
+    if (committed[itemId]) return;
+    var vs = vendorsForItem(it.id);
+    var vendorId, linePrice;
+    if (vs.length){
+      var cheapest = vs[0];
+      vendorId = cheapest.vendorId;
+      linePrice = cheapest.price;
+    } else {
+      /* No vendor priced this item on file yet. Rather than skip it, group it
+         into a shared "vendor not yet assigned" order with a blank price —
+         so it still reaches a purchase order. The user assigns a real vendor
+         and price right there on the Purchase Orders tab, the same way any
+         other line is edited. */
+      vendorId = null;
+      linePrice = null;
+      addedNoVendor.push(it.name);
+    }
+    var openPO = DB.pos.find(function(p){ return p.status==="created" && p.vendorId===vendorId; });
+    if (!openPO){
+      openPO = {id: uid("po"), vendorId: vendorId, orderNumber: nextOrderNumber(), status:"created", createdDate: todayStr(), purchasedDate:""};
+      DB.pos.push(openPO);
+    }
+    DB.poLines.push({id: uid("pl"), poId: openPO.id, itemId: it.id, name: it.name, qty: needed(it), price: linePrice, purchased: false, purchasedOnDate: null});
+    addedCount++;
+  });
+  DB.catalogedItemIds = [];
+  persist("pos"); persist("poLines"); persist("catalogedItemIds");
+  if (addedCount){
+    state.tab = "purchaseOrders";
+    render();
+  } else {
+    render();
+  }
+  if (addedCount || addedNoVendor.length){
+    var msg = addedCount ? (addedCount+" item"+(addedCount===1?"":"s")+" added to purchase orders.") : "None of the checked items needed a purchase order.";
+    if (addedNoVendor.length) msg += "\n\n"+addedNoVendor.length+" item"+(addedNoVendor.length===1?"":"s")+" ("+addedNoVendor.join(", ")+") had no vendor on file yet — "+(addedNoVendor.length===1?"it was":"they were")+" grouped into its own order so you can assign a supplier and price on the Purchase Orders tab.";
+    if (skippedStocked) msg += "\n\n"+skippedStocked+" checked item"+(skippedStocked===1?"":"s")+" "+(skippedStocked===1?"was":"were")+" already fully stocked and didn’t need an order.";
+    alert(msg);
+  } else if (skippedStocked){
+    alert("All "+skippedStocked+" checked item"+(skippedStocked===1?"":"s")+" "+(skippedStocked===1?"was":"were")+" already fully stocked — nothing needed to be ordered.");
+  }
+}
+
+/* Adds qty of an item onto a specific purchase order. If that item already has
+   a line on this order, the quantities are combined instead of creating a
+   second row for the same item. priceIfNew only applies when a new line is
+   created — an existing line's price is left exactly as it was. */
+function addOrBumpPOLine(poId, itemId, qty, priceIfNew){
+  var existing = DB.poLines.find(function(l){ return l.poId===poId && l.itemId===itemId; });
+  if (existing){
+    existing.qty = existing.qty + qty;
+  } else {
+    var it = itemById(itemId);
+    DB.poLines.push({id: uid("pl"), poId: poId, itemId: itemId, name: it?it.name:"", qty: qty, price: priceIfNew, purchased: false, purchasedOnDate: null});
+  }
+  persist("poLines");
+}
+
+/* Reorder tab's "Add to Purchase Order" button: finds this item's cheapest
+   vendor (same rule the Catalog → Create Purchase Order flow uses) and drops
+   it onto that vendor's already-open "created" order, or starts a new one.
+   Items with no vendor priced on file yet fall into the same shared
+   "no vendor assigned yet" order that Catalog uses for the same case. */
+function addItemToPurchaseOrder(itemId){
+  var it = itemById(itemId);
+  if (!it) return;
+  var vs = vendorsForItem(it.id);
+  var vendorId, linePrice;
+  if (vs.length){
+    var cheapest = vs[0];
+    vendorId = cheapest.vendorId;
+    linePrice = cheapest.price;
+  } else {
+    vendorId = null;
+    linePrice = null;
+  }
+  var openPO = DB.pos.find(function(p){ return p.status==="created" && p.vendorId===vendorId; });
+  if (!openPO){
+    openPO = {id: uid("po"), vendorId: vendorId, orderNumber: nextOrderNumber(), status:"created", createdDate: todayStr(), purchasedDate:""};
+    DB.pos.push(openPO);
+  }
+  addOrBumpPOLine(openPO.id, it.id, Math.max(1, needed(it)), linePrice);
+  persist("pos");
+  render();
+}
+
+/* Completing a purchase order splits its lines in two: items checked off as
+   "Purchased" move into the Orders Placed ledger (dated today), while any
+   unchecked items stay on the same order but the order itself flips to
+   status "unpurchased" so it now lives on the Recommended Orders tab, still
+   editable, still awaiting purchase. If every line was checked off, the
+   order is fully consumed and removed. */
+function completePurchaseOrder(poId){
+  var po = poById(poId);
+  if (!po) return;
+  var lines = linesForPO(poId);
+  var purchasedLines = lines.filter(function(l){ return !!l.purchased; });
+  if (!purchasedLines.length){
+    alert("Check off at least one item as “Purchased” before completing this order.");
+    return;
+  }
+  var remainingCount = lines.length - purchasedLines.length;
+  if (!confirm("Complete this purchase order? "+purchasedLines.length+" item"+(purchasedLines.length===1?"":"s")+" will move to Orders Placed."+(remainingCount ? " The remaining "+remainingCount+" item"+(remainingCount===1?"":"s")+" will move to Recommended Orders." : ""))) return;
+
+  var today = todayStr();
+  purchasedLines.forEach(function(l){
+    var it = itemById(l.itemId);
+    DB.purchasedItems.push({
+      id: uid("pi"),
+      orderNumber: po.orderNumber,
+      vendorId: po.vendorId,
+      itemId: l.itemId,
+      itemName: it ? it.name : (l.name || "Unknown item"),
+      qty: l.qty,
+      price: l.price,
+      /* Use the date the line was actually checked "Purchased," not the date
+         this order happens to be completed — falls back to today only if
+         that stamp is somehow missing. */
+      purchasedDate: l.purchasedOnDate || today
+    });
+  });
+  var purchasedIds = {};
+  purchasedLines.forEach(function(l){ purchasedIds[l.id] = true; });
+  DB.poLines = DB.poLines.filter(function(l){ return !purchasedIds[l.id]; });
+
+  if (linesForPO(poId).length){
+    po.status = "unpurchased";
+  } else {
+    DB.pos = DB.pos.filter(function(p){ return p.id!==poId; });
+  }
+  persist("pos"); persist("poLines"); persist("purchasedItems");
+  render();
+}
+
+/* Moves a PO line to a different vendor's "created" order (creating one if
+   needed), since a purchase order is always for a single vendor. Cleans up
+   the old order if it's left empty. */
+function moveLineToVendor(lineId, vendorId){
+  var line = DB.poLines.find(function(l){return l.id===lineId;});
+  if (!line) return;
+  var oldPO = poById(line.poId);
+  if (!oldPO || oldPO.vendorId===vendorId) return;
+  var targetPO = DB.pos.find(function(p){ return p.status==="created" && p.vendorId===vendorId; });
+  if (!targetPO){
+    targetPO = {id: uid("po"), vendorId: vendorId, orderNumber: nextOrderNumber(), status:"created", createdDate: todayStr(), purchasedDate:""};
+    DB.pos.push(targetPO);
+  }
+  line.poId = targetPO.id;
+  if (linesForPO(oldPO.id).length===0){
+    DB.pos = DB.pos.filter(function(p){return p.id!==oldPO.id;});
+  }
+  persist("pos"); persist("poLines");
+  render();
+}
+function addNewVendorAndMoveLine(lineId, name){
+  var v = {id: uid("v"), name: name, website:"", contact:"", contactName:""};
+  DB.vendors.push(v);
+  persist("vendors");
+  moveLineToVendor(lineId, v.id);
+}
+function removePOLine(lineId){
+  if (!confirm("Remove this item from the order?")) return;
+  var line = DB.poLines.find(function(l){return l.id===lineId;});
+  if (!line) return;
+  var poId = line.poId;
+  DB.poLines = DB.poLines.filter(function(l){return l.id!==lineId;});
+  if (linesForPO(poId).length===0){
+    DB.pos = DB.pos.filter(function(p){return p.id!==poId;});
+  }
+  persist("pos"); persist("poLines");
+  render();
+}
+
+function removePurchasedItem(id){
+  if (!confirm("Remove this purchased record? This won't affect stock levels or the original order.")) return;
+  DB.purchasedItems = DB.purchasedItems.filter(function(p){return p.id!==id;});
+  persist("purchasedItems");
+  render();
+}
+function updatePurchasedDateGroup(orderNumber, oldDate, newValue){
+  DB.purchasedItems.forEach(function(p){
+    if (p.orderNumber===orderNumber && p.purchasedDate===oldDate) p.purchasedDate = newValue;
+  });
+  persist("purchasedItems");
+  render();
+}
+
+/* Correcting a PO line's price is treated as the real, current price from
+   that vendor going forward — it updates (or creates) the item's vendor
+   pricing record, not just this one order. */
+function updateVendorPriceForLine(itemId, vendorId, newPrice){
+  var iv = DB.itemVendors.find(function(x){return x.itemId===itemId && x.vendorId===vendorId;});
+  if (iv){
+    if (iv.price !== newPrice){
+      DB.priceChanges.push({id: uid("pc"), itemId: itemId, vendorId: vendorId, oldPrice: iv.price, newPrice: newPrice, date: todayStr()});
+      persist("priceChanges");
+    }
+    iv.price = newPrice;
+  }
+  else { DB.itemVendors.push({id: uid("iv"), itemId: itemId, vendorId: vendorId, price: newPrice}); }
+  persist("itemVendors");
+}
+
+function cancelCreatedPO(poId){
+  if (!confirm("Cancel this purchase order? It hasn't been purchased yet.")) return;
+  DB.pos = DB.pos.filter(function(p){return p.id!==poId;});
+  DB.poLines = DB.poLines.filter(function(l){return l.poId!==poId;});
+  persist("pos"); persist("poLines");
+  render();
+}
+function updateVendorContact(vendorId, value){
+  var v = vendorById(vendorId);
+  if (v){ v.contact = value; persist("vendors"); }
+}
+
+/* Checking an item "Received" on the Orders Placed tab moves it into
+   Orders Received and adds its quantity to stock \u2014 the point at which it
+   actually counts as inventory on the shelf. */
+function markItemReceived(purchasedItemId){
+  var p = DB.purchasedItems.find(function(x){return x.id===purchasedItemId;});
+  if (!p) return;
+  DB.purchasedItems = DB.purchasedItems.filter(function(x){return x.id!==purchasedItemId;});
+  var it = itemById(p.itemId);
+  if (it) it.qty += p.qty;
+  DB.receivedItems.push({
+    id: uid("ri"), orderNumber: p.orderNumber, vendorId: p.vendorId, itemId: p.itemId,
+    itemName: p.itemName, qty: p.qty, price: p.price, purchasedDate: p.purchasedDate, receivedDate: todayStr()
+  });
+  persist("items"); persist("purchasedItems"); persist("receivedItems");
+  render();
+}
+/* Checking "Received" on the Orders Placed tab no longer moves an item
+   instantly — it just flags it and dims the row. "Confirm All Received"
+   finalizes every checked item in that one order group: adds its qty to
+   stock and moves it into Order History, keeping the original order #,
+   purchase date, item, quantity and price intact. Anything left unchecked
+   simply stays put for next time. */
+function confirmGroupReceived(orderNumber, purchasedDate){
+  var group = DB.purchasedItems.filter(function(p){
+    return p.orderNumber===orderNumber && p.purchasedDate===purchasedDate && p.receivedPending;
+  });
+  if (!group.length){
+    alert("Check off at least one item as “Received” before confirming.");
+    return;
+  }
+  if (!confirm("Confirm "+group.length+" item"+(group.length===1?"":"s")+" received? "+(group.length===1?"It":"They")+" will move to Order History and be added to stock.")) return;
+  var ids = {};
+  group.forEach(function(p){ ids[p.id] = true; });
+  group.forEach(function(p){
+    var it = itemById(p.itemId);
+    if (it) it.qty += p.qty;
+    DB.receivedItems.push({
+      id: uid("ri"), orderNumber: p.orderNumber, vendorId: p.vendorId, itemId: p.itemId,
+      itemName: p.itemName, qty: p.qty, price: p.price, purchasedDate: p.purchasedDate, receivedDate: todayStr()
+    });
+  });
+  DB.purchasedItems = DB.purchasedItems.filter(function(p){ return !ids[p.id]; });
+  persist("items"); persist("purchasedItems"); persist("receivedItems");
+  render();
+}
+function undoItemReceived(receivedItemId){
+  var r = DB.receivedItems.find(function(x){return x.id===receivedItemId;});
+  if (!r) return;
+  DB.receivedItems = DB.receivedItems.filter(function(x){return x.id!==receivedItemId;});
+  var it = itemById(r.itemId);
+  if (it) it.qty = Math.max(0, it.qty - r.qty);
+  DB.purchasedItems.push({
+    id: uid("pi"), orderNumber: r.orderNumber, vendorId: r.vendorId, itemId: r.itemId,
+    itemName: r.itemName, qty: r.qty, price: r.price, purchasedDate: r.purchasedDate
+  });
+  persist("items"); persist("purchasedItems"); persist("receivedItems");
+  render();
+}
+
+/* An item counts as "missing" once at least one other item from the same
+   original order has already been received, while this one is still sitting
+   unreceived in Orders Placed \u2014 i.e. a short/partial shipment. */
+function computeMissingLines(){
+  var receivedGroupKeys = {};
+  DB.receivedItems.forEach(function(r){ receivedGroupKeys[r.orderNumber+"|"+r.purchasedDate] = true; });
+  var result = [];
+  DB.purchasedItems.forEach(function(p){
+    if (receivedGroupKeys[p.orderNumber+"|"+p.purchasedDate]){
+      result.push({ item: itemById(p.itemId), purchased: p, vendor: vendorById(p.vendorId) });
+    }
+  });
+  return result;
+}
+
+/* ============================================================
+   STATE
+   ============================================================ */
+var state = {
+  tab: "dashboard",
+  categoryKey: null,
+  statusFilter: null,
+  freqFilter: "all",
+  itemsListCategory: "all",
+  catalogTab: "all",
+  catalogFreq: "all",
+  search: "",
+  poEditing: null,
+  expenseMode: "pastMonth",
+  expenseCustomFrom: null,
+  expenseCustomTo: null,
+  reorderSort: "urgency",
+  historyDateRange: "all",
+  historyCategory: "all",
+  historySupplier: "all",
+  budgetExpanded: {},
+  budgetExpandedOrders: {},
+  supplierKey: null,
+  supplierEditing: null
+};
+
+/* ============================================================
+   RENDER ROOT
+   ============================================================ */
+var isRendering = false;
+function render(){
+  if (isRendering) return;
+  isRendering = true;
+  var root = document.getElementById("ds-root");
+  root.innerHTML = appShell();
+  bindSidebarEvents();
+  bindEvents();
+  isRendering = false;
+}
+function renderMain(){
+  if (isRendering) return;
+  isRendering = true;
+  var main = document.getElementById("ds-main");
+  if (!main){ isRendering = false; render(); return; }
+  main.innerHTML = mainContent();
+  bindEvents();
+  isRendering = false;
+}
+function bindSidebarEvents(){
+  var root = document.getElementById("ds-root");
+  root.querySelectorAll("[data-tab]").forEach(function(b){
+    b.addEventListener("click", function(){
+      var tab = b.getAttribute("data-tab");
+      state.tab = tab; state.search=""; state.poEditing=null; state.supplierEditing=null; render();
+    });
+  });
+}
+function appShell(){
+  return '<div id="ds-app">' + sidebarHtml() + '<div id="ds-main">' + mainContent() + '</div></div>';
+}
+function sidebarHtml(){
+  var createdCount = DB.pos.filter(function(p){return p.status==="created";}).length;
+  var unpurchasedCount = DB.pos.filter(function(p){return p.status==="unpurchased";}).length;
+  var pendingCount = DB.purchasedItems.length;
+  var missingCount = computeMissingLines().length;
+  var tabs = [
+    {k:"dashboard", label:"Dashboard", icon:"ti-layout-dashboard"},
+    {k:"frequency", label:"Items List", icon:"ti-list-numbers"},
+    {k:"catalog", label:"Catalog", icon:"ti-clipboard-list"},
+    {k:"reorder", label:"Reorder", icon:"ti-shopping-cart"},
+    {k:"purchaseOrders", label:"Purchase Orders", icon:"ti-file-invoice", badge:createdCount},
+    {k:"pendingOrders", label:"Orders Placed", icon:"ti-receipt", badge:pendingCount},
+    {k:"unpurchasedOrders", label:"Recommended Orders", icon:"ti-file-alert", badge:unpurchasedCount},
+    {k:"ordersReceived", label:"Order History", icon:"ti-history", badge:0},
+    {k:"missingItems", label:"Missing Items", icon:"ti-alert-triangle", badge:missingCount},
+    {k:"suppliers", label:"Suppliers", icon:"ti-users"},
+    {k:"budget", label:"Expenses", icon:"ti-wallet"},
+    {k:"instructions", label:"Instructions", icon:"ti-help-circle"}
+  ];
+  var html = '<div id="ds-sidebar">';
+  html += '<div class="ds-brand">' + LOGO_SVG + '<div><div class="ds-brand-text">Got Signs</div><div class="ds-brand-sub">Inventory</div></div></div>';
+  tabs.forEach(function(t){
+    var active = state.tab===t.k || (state.tab==="category" && t.k==="dashboard") || (state.tab==="supplierDetail" && t.k==="suppliers");
+    html += '<button class="ds-navitem'+(active?' active':'')+'" data-tab="'+t.k+'"><i class="ti '+t.icon+'" style="font-size:16px;" aria-hidden="true"></i><span class="ds-navlabel">'+t.label+'</span>' + (t.badge?'<span class="ds-navbadge">'+t.badge+'</span>':'') + '</button>';
+  });
+  html += '</div>';
+  return html;
+}
+function pageTitle(){
+  if (state.tab==="category") return CATEGORY_LABELS[state.categoryKey] || "";
+  return { dashboard:"Dashboard", frequency:"Items List", catalog:"Catalog", reorder:"Reorder", purchaseOrders:"Purchase Orders", unpurchasedOrders:"Recommended Orders", pendingOrders:"Orders Placed", ordersReceived:"Order History", missingItems:"Missing Items", suppliers:"Suppliers", supplierDetail:state.supplierKey?(vendorById(state.supplierKey)?vendorById(state.supplierKey).name:"Supplier"):"Supplier", budget:"Expenses", instructions:"Instructions" }[state.tab] || "";
+}
+function mainContent(){
+  var html = '<div class="ds-titlebar"><h1 class="ds-title" style="margin:0;">'+escapeHtml(pageTitle())+'</h1>';
+  html += '<button class="ds-btn-outline ds-print-btn" data-action="print-page"><i class="ti ti-printer" style="font-size:13px;vertical-align:-2px;margin-right:4px;" aria-hidden="true"></i>Print / Save as PDF</button>';
+  html += '</div>';
+  if (state.tab==="dashboard") html += dashboardTab();
+  else if (state.tab==="category") html += categoryPanel();
+  else if (state.tab==="frequency") html += frequencyTab();
+  else if (state.tab==="catalog") html += catalogTab();
+  else if (state.tab==="reorder") html += reorderTab();
+  else if (state.tab==="purchaseOrders") html += purchaseOrdersTab();
+  else if (state.tab==="unpurchasedOrders") html += unpurchasedOrdersTab();
+  else if (state.tab==="pendingOrders") html += purchasedOrdersTab();
+  else if (state.tab==="ordersReceived") html += orderHistoryTab();
+  else if (state.tab==="missingItems") html += missingItemsTab();
+  else if (state.tab==="suppliers") html += suppliersTab();
+  else if (state.tab==="supplierDetail") html += supplierDetailPanel();
+  else if (state.tab==="budget") html += budgetTab();
+  else if (state.tab==="instructions") html += instructionsTab();
+  return html;
+}
+
+/* ============================================================
+   DASHBOARD
+   ============================================================ */
+function dashboardTab(){
+  var lowCount = countByStatus(DB.items,"low");
+  var warnCount = countByStatus(DB.items,"warning");
+  var okCount = countByStatus(DB.items,"optimal");
+
+  var html = "";
+  var missing = computeMissingLines();
+  if (missing.length){
+    var names = missing.map(function(m){ return m.item ? m.item.name : "Unknown item"; });
+    var shown = names.slice(0,4).join(", ");
+    if (names.length>4) shown += ", and "+(names.length-4)+" more";
+    html += '<div class="ds-missing-banner"><i class="ti ti-alert-triangle" aria-hidden="true"></i><div style="flex:1;"><div class="ds-missing-banner-title">'+missing.length+' item'+(missing.length===1?"":"s")+' missing from received orders</div><div class="ds-missing-banner-list">'+escapeHtml(shown)+'</div></div><a href="#" data-action="goto-missing">View missing items \u2192</a></div>';
+  }
+
+  html += '<div class="ds-statusrow">';
+  html += '<button class="ds-statusbtn ds-statusbtn-red" data-action="status-filter" data-status="low"><div class="ds-statusnum">'+lowCount+'</div><div class="ds-statuslabel">LOW STOCK \u2014 REPLENISH NOW</div></button>';
+  html += '<button class="ds-statusbtn ds-statusbtn-yellow" data-action="status-filter" data-status="warning"><div class="ds-statusnum">'+warnCount+'</div><div class="ds-statuslabel">RUNNING LOW \u2014 REPLENISH SOON</div></button>';
+  html += '<button class="ds-statusbtn ds-statusbtn-green" data-action="status-filter" data-status="optimal"><div class="ds-statusnum">'+okCount+'</div><div class="ds-statuslabel">IN STOCK</div></button>';
+  html += '</div>';
+
+  html += '<div class="ds-catgrid">';
+  CATEGORY_ORDER.forEach(function(key){
+    var items = DB.items.filter(function(it){return it.category===key;});
+    var lowInCat = countByStatus(items,"low") + countByStatus(items,"warning");
+    var sub = lowInCat>0 ? (lowInCat+" item"+(lowInCat===1?"":"s")+" need attention") : "All stocked";
+    html += '<button class="ds-catbox" data-action="open-category" data-category="'+key+'">';
+    html += '<i class="ti '+CATEGORY_ICONS[key]+' ds-catbox-icon" aria-hidden="true"></i>';
+    html += '<div><div class="ds-catbox-name">'+CATEGORY_LABELS[key]+'</div><div class="ds-catbox-sub">'+escapeHtml(sub)+'</div></div>';
+    html += '</button>';
+  });
+  html += '</div>';
+  var lastInv = lsGet("lastInventoryDate", "");
+  html += '<div style="text-align:center;font-size:12px;color:#7c8a9b;margin-top:1.75rem;">Inventory last taken: '+(lastInv?fmtDate(lastInv):"Never")+'</div>';
+  html += '<button class="ds-bigcta" data-action="goto-catalog" style="margin-top:8px;"><i class="ti ti-clipboard-list" aria-hidden="true"></i>Take Inventory</button>';
+  html += '<div style="display:flex;align-items:center;justify-content:center;gap:16px;margin-top:14px;">';
+  html += '<button class="ds-btn-outline" data-action="export-data"><i class="ti ti-download" style="font-size:13px;vertical-align:-2px;margin-right:4px;" aria-hidden="true"></i>Export data</button>';
+  html += '<button class="ds-btn-outline" data-action="trigger-import"><i class="ti ti-upload" style="font-size:13px;vertical-align:-2px;margin-right:4px;" aria-hidden="true"></i>Import data</button>';
+  html += '</div>';
+  return html;
+}
+
+/* ============================================================
+   CATEGORY PANEL (fullscreen "flip" page)
+   ============================================================ */
+function categoryPanel(){
+  var key = state.categoryKey;
+  var list = sortByUrgency(DB.items.filter(function(it){ return it.category===key; }));
+  var html = '<div class="ds-category-panel">';
+  html += '<div style="margin-bottom:1rem;"><button class="ds-btn-outline" data-action="back-to-dashboard"><i class="ti ti-arrow-left" style="font-size:13px;vertical-align:-2px;" aria-hidden="true"></i> Back to dashboard</button></div>';
+  if (!list.length){
+    html += '<div class="ds-empty">No items in this category yet.</div></div>';
+    return html;
+  }
+  html += '<div class="ds-card"><div style="overflow-x:auto;"><table class="ds-table"><tr><th>Item</th><th>Unit</th><th>On hand</th><th>Needed</th><th>Reorder at</th><th>Status</th><th>Frequency</th></tr>';
+  list.forEach(function(it){
+    var s = stockStatus(it);
+    html += '<tr><td><div class="ds-item-name">'+escapeHtml(it.name)+'</div>' + (it.specs?'<div class="ds-item-specs">'+escapeHtml(it.specs)+'</div>':'') + '</td>' +
+      '<td>'+escapeHtml(it.unit)+'</td><td>'+it.qty+'</td><td>'+needed(it)+'</td><td>'+it.reorder+'</td><td>'+badgeForStatus(s)+'</td><td>'+TIERS[it.tier].label+'</td></tr>';
+  });
+  html += '</table></div></div></div>';
+  return html;
+}
+
+/* ============================================================
+   ITEMS LIST TAB (formerly "Frequency")
+   ============================================================ */
+function frequencyTab(){
+  var html = '<div class="ds-tabs-row">';
+  [["all","All items"],["weekly","Weekly"],["monthly","Monthly"],["quarterly","Quarterly"]].forEach(function(t){
+    var active = state.freqFilter===t[0];
+    html += '<button class="ds-tab-pill'+(active?' active':'')+'" data-freqtab="'+t[0]+'">'+t[1]+'</button>';
+  });
+  html += '</div>';
+
+  html += '<div class="ds-tabs-row">';
+  var catPills = [["all","All categories"]];
+  CATEGORY_ORDER.forEach(function(k){ catPills.push([k, CATEGORY_LABELS[k]]); });
+  catPills.forEach(function(t){
+    var active = state.itemsListCategory===t[0];
+    html += '<button class="ds-tab-pill'+(active?' active':'')+'" data-ilcat="'+t[0]+'">'+t[1]+'</button>';
+  });
+  html += '</div>';
+
+  html += '<div class="ds-tabs-row">';
+  [["all","All statuses",null],["low","Low stock","low"],["warning","Running low","warning"],["optimal","In stock","optimal"]].forEach(function(t){
+    var active = (state.statusFilter||"all")===t[0];
+    html += '<button class="ds-tab-pill'+(active?' active':'')+'" data-statustab="'+t[0]+'">'+(t[2]?dotForStatus(t[2])+' ':'')+t[1]+'</button>';
+  });
+  html += '</div>';
+
+  html += '<div class="ds-searchbar"><input type="text" placeholder="Search items\u2026" data-il-search value="'+escapeAttr(state.search)+'" /><button class="ds-btn-outline" data-action="add-list-item"><i class="ti ti-plus" style="font-size:13px;vertical-align:-2px;" aria-hidden="true"></i> Add item</button></div>';
+
+  var list = DB.items.slice();
+  if (state.freqFilter!=="all") list = list.filter(function(it){return it.tier===state.freqFilter;});
+  if (state.itemsListCategory!=="all") list = list.filter(function(it){return it.category===state.itemsListCategory;});
+  if (state.statusFilter) list = list.filter(function(it){return stockStatus(it)===state.statusFilter;});
+  if (state.search) list = list.filter(function(it){return it.name.toLowerCase().indexOf(state.search.toLowerCase())>-1;});
+  list = sortByUrgency(list);
+
+  if (!list.length){
+    html += '<div class="ds-empty">No items match this filter.</div>';
+    return html;
+  }
+  html += '<div class="ds-card">';
+  list.forEach(function(it){
+    var s = stockStatus(it);
+    var vs = vendorsForItem(it.id);
+    var priceBit = vs.length ? (' \u00b7 '+fmt$(vs[0].price)+(vs.length>1?' (best of '+vs.length+')':'')) : '';
+    html += '<div style="display:flex;align-items:center;gap:12px;padding:10px 2px;border-bottom:1px solid #eef1f4;">';
+    html += '<div style="width:44px;text-align:right;font-size:16px;font-weight:800;color:#13233a;flex:0 0 auto;">'+it.qty+'</div>';
+    html += '<div style="flex:1;min-width:0;">';
+    html += '<div class="ds-item-name">'+escapeHtml(it.name)+'</div>';
+    if (it.specs) html += '<div class="ds-item-specs">'+escapeHtml(it.specs)+'</div>';
+    html += '<div style="font-size:11px;color:#7c8a9b;margin-top:2px;">'+CATEGORY_LABELS[it.category]+' \u00b7 '+TIERS[it.tier].label+(it.sku?' \u00b7 SKU '+escapeHtml(it.sku):'')+priceBit+'</div>';
+    html += '</div>';
+    html += '<div style="flex:0 0 auto;">'+badgeForStatus(s)+'</div>';
+    html += '<button class="ds-btn-outline" data-action="edit-list-item" data-item="'+it.id+'" style="flex:0 0 auto;">Edit item</button>';
+    html += '</div>';
+  });
+  html += '</div>';
+  return html;
+}
+
+/* ============================================================
+   CATALOG TAB
+   ============================================================ */
+function catalogTab(){
+  var verifiedCount = DB.catalogedItemIds.length;
+  var html = '<div style="display:flex;justify-content:flex-end;align-items:center;gap:14px;margin-bottom:.6rem;flex-wrap:wrap;">';
+  html += '<span style="font-size:12.5px;color:#5b6b80;">'+verifiedCount+' item'+(verifiedCount===1?"":"s")+' verified today</span>';
+  html += '<button class="ds-btn-primary" data-action="create-po-from-catalog"'+(verifiedCount?'':' disabled')+' style="'+(verifiedCount?'':'opacity:.5;cursor:default;')+'">Create Purchase Order</button>';
+  html += '</div>';
+  html += '<p style="font-size:12px;color:#7c8a9b;margin:0 0 1rem;">Count each item and correct its on-hand and ideal quantities if needed, then check the box once you’ve confirmed the number is right. <b>Create Purchase Order</b> only orders checked items that actually need restocking.</p>';
+  html += '<div class="ds-tabs-row">';
+  var tabs = [["all","All items"]];
+  CATEGORY_ORDER.forEach(function(k){ tabs.push([k, CATEGORY_LABELS[k]]); });
+  tabs.forEach(function(t){
+    var active = state.catalogTab===t[0];
+    html += '<button class="ds-tab-pill'+(active?' active':'')+'" data-catalogtab="'+t[0]+'">'+t[1]+'</button>';
+  });
+  html += '</div>';
+  html += '<div class="ds-tabs-row">';
+  [["all","All frequencies"],["weekly","Weekly"],["monthly","Monthly"],["quarterly","Quarterly"]].forEach(function(t){
+    var active = state.catalogFreq===t[0];
+    html += '<button class="ds-tab-pill'+(active?' active':'')+'" data-catalogfreq="'+t[0]+'">'+t[1]+'</button>';
+  });
+  html += '</div>';
+
+  html += '<div class="ds-searchbar"><input type="text" placeholder="Search items\u2026" data-catalog-search value="'+escapeAttr(state.search)+'" /><button class="ds-btn-outline" data-action="catalog-add-item"><i class="ti ti-plus" style="font-size:13px;vertical-align:-2px;" aria-hidden="true"></i> Add item</button></div>';
+
+  var list = DB.items.slice();
+  if (state.catalogTab!=="all") list = list.filter(function(it){return it.category===state.catalogTab;});
+  if (state.catalogFreq!=="all") list = list.filter(function(it){return it.tier===state.catalogFreq;});
+  if (state.search) list = list.filter(function(it){return it.name.toLowerCase().indexOf(state.search.toLowerCase())>-1;});
+  list.sort(function(a,b){return a.name.localeCompare(b.name);});
+
+  if (!list.length){
+    html += '<div class="ds-empty">No items match.</div>';
+    return html;
+  }
+  html += '<div class="ds-card">';
+  list.forEach(function(it){
+    var s = stockStatus(it);
+    var verified = DB.catalogedItemIds.indexOf(it.id)>-1;
+    var vs = vendorsForItem(it.id);
+    var priceHtml = vs.length ? '<div style="font-size:11px;color:#7c8a9b;">'+fmt$(vs[0].price)+(vs.length>1?' (best of '+vs.length+')':'')+'</div>' : '';
+    html += '<div style="display:flex;align-items:center;gap:10px;padding:9px 8px;margin:0 -8px;border-bottom:1px solid #eef1f4;border-radius:6px;'+(verified?'background:#dcf3e3;':'')+'">';
+    html += '<input type="checkbox" data-action="toggle-catalog-verified" data-item="'+it.id+'" '+(verified?'checked ':'')+'aria-label="Confirm '+escapeAttr(it.name)+' was counted today and the number is right" style="width:18px;height:18px;accent-color:#1b62c4;flex:0 0 auto;" />';
+    html += '<div style="flex:1;min-width:0;"><div class="ds-item-name">'+escapeHtml(it.name)+'</div>' + (it.specs?'<div class="ds-item-specs">'+escapeHtml(it.specs)+'</div>':'') + priceHtml + '</div>';
+    html += '<div style="width:66px;font-size:12px;color:#7c8a9b;text-align:right;">'+escapeHtml(it.unit)+'</div>';
+    html += badgeForStatus(s);
+    html += '<input type="number" min="0" step="1" value="'+it.qty+'" data-qty="'+it.id+'" style="width:70px;" aria-label="On hand quantity for '+escapeAttr(it.name)+'" />';
+    html += '<span style="font-size:12.5px;color:#7c8a9b;white-space:nowrap;">of</span>';
+    html += '<input type="number" min="0" step="1" value="'+it.par+'" data-ideal="'+it.id+'" style="width:60px;" aria-label="Ideal quantity for '+escapeAttr(it.name)+'" />';
+    html += '<button data-action="catalog-edit-item" data-item="'+it.id+'" style="flex:0 0 auto;background:none;border:none;font-size:11.5px;font-weight:600;color:#1b62c4;text-decoration:underline;padding:2px 0 2px 4px;">Edit item</button>';
+    html += '</div>';
+  });
+  html += '</div>';
+  return html;
+}
+
+/* ============================================================
+   REORDER TAB
+   ============================================================ */
+function reorderTab(){
+  var sortMode = state.reorderSort || "urgency";
+  var html = '<div class="ds-tabs-row">';
+  [["urgency","Urgency"],["lastPurchased","Last purchased"],["frequency","Most frequently purchased"],["alpha","Alphabetical"]].forEach(function(t){
+    var active = sortMode===t[0];
+    html += '<button class="ds-tab-pill'+(active?' active':'')+'" data-reordersort="'+t[0]+'">'+t[1]+'</button>';
+  });
+  html += '</div>';
+
+  var list = DB.items.filter(function(it){ var s = stockStatus(it); return s==="low" || s==="warning"; });
+  if (sortMode==="urgency") list = sortByUrgency(list);
+  else if (sortMode==="alpha") list = list.slice().sort(function(a,b){return a.name.localeCompare(b.name);});
+  else if (sortMode==="lastPurchased") list = list.slice().sort(function(a,b){
+    var da = lastPurchasedDateForItem(a.id) || "";
+    var db = lastPurchasedDateForItem(b.id) || "";
+    if (da===db) return a.name.localeCompare(b.name);
+    return db.localeCompare(da);
+  });
+  else if (sortMode==="frequency") list = list.slice().sort(function(a,b){
+    var diff = purchaseFrequencyForItem(b.id) - purchaseFrequencyForItem(a.id);
+    return diff!==0 ? diff : a.name.localeCompare(b.name);
+  });
+
+  if (!list.length){
+    return html + '<div class="ds-empty">Nothing needs reordering right now \u2014 everything is stocked above its reorder point.</div>';
+  }
+  html += '<p style="font-size:12.5px;color:#5b6b80;margin:0 0 1rem;">These items are at or below their reorder point. Pick a vendor to open their site and place the order directly, or add it straight to a purchase order.</p>';
+  var committed = committedItemIds();
+  list.forEach(function(it){
+    var s = stockStatus(it);
+    var vs = vendorsForItem(it.id);
+    html += '<div class="ds-card">';
+    html += '<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap;">';
+    html += '<div><div class="ds-item-name">'+escapeHtml(it.name)+'</div>' + (it.specs?'<div class="ds-item-specs">'+escapeHtml(it.specs)+'</div>':'') + '<div style="font-size:11.5px;color:#7c8a9b;margin-top:3px;">'+CATEGORY_LABELS[it.category]+' \u00b7 '+TIERS[it.tier].label+'</div></div>';
+    html += badgeForStatus(s);
+    html += '</div>';
+    html += '<div style="font-size:12.5px;color:#5b6b80;margin:8px 0;">On hand <b>'+it.qty+'</b> '+escapeHtml(it.unit)+(it.qty===1?'':'s')+' \u00b7 reorder at <b>'+it.reorder+'</b> \u00b7 need <b>'+needed(it)+'</b> more</div>';
+    var priceChange = latestPriceChangeForItem(it.id);
+    if (priceChange){
+      var pcVendor = vendorById(priceChange.vendorId);
+      html += '<div style="font-size:11.5px;color:#92660a;background:#fdf0cd;border-radius:5px;padding:6px 9px;margin-bottom:8px;">Price changed from '+fmt$(priceChange.oldPrice)+' to '+fmt$(priceChange.newPrice)+' on '+fmtDate(priceChange.date)+' by '+escapeHtml(pcVendor?pcVendor.name:"Unknown supplier")+'</div>';
+    }
+    if (!vs.length){
+      html += '<div style="font-size:12px;color:#b3261e;margin-bottom:8px;">No vendor priced for this item yet.</div>';
+    } else {
+      html += '<div style="margin-bottom:8px;">';
+      vs.forEach(function(o,idx){
+        if (o.website){
+          html += '<a class="ds-order-link" href="'+escapeAttr(o.website)+'" target="_blank" rel="noopener noreferrer">'+escapeHtml(o.vendorName)+' \u2014 '+fmt$(o.price)+ (idx===0?'<span class="ds-best">Best price</span>':'') +' <i class="ti ti-external-link" style="font-size:12px;" aria-hidden="true"></i></a>';
+        } else {
+          html += '<span class="ds-order-link" style="opacity:.6;">'+escapeHtml(o.vendorName)+' \u2014 '+fmt$(o.price)+' (no website on file)</span>';
+        }
+      });
+      html += '</div>';
+    }
+    html += '<div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">';
+    html += '<button class="ds-btn-outline" data-action="add-to-po" data-item="'+it.id+'"><i class="ti ti-file-invoice" style="font-size:13px;vertical-align:-2px;" aria-hidden="true"></i> Add to Purchase Order</button>';
+    if (committed[it.id]) html += '<span style="font-size:11px;color:#7c8a9b;">Already on an open order</span>';
+    html += '</div>';
+    html += '</div>';
+  });
+  return html;
+}
+
+/* ============================================================
+   PURCHASE ORDERS TAB
+   ============================================================ */
+function isEditingPO(field, id){ return state.poEditing && state.poEditing.field===field && state.poEditing.id===id; }
+function vendorSelectHtml(lineId, currentVendorId){
+  var html = '<select data-line-vendor="'+lineId+'">';
+  DB.vendors.forEach(function(v){
+    html += '<option value="'+v.id+'" '+(v.id===currentVendorId?"selected":"")+'>'+escapeHtml(v.name)+'</option>';
+  });
+  html += '<option value="__other__">+ Other (new supplier)\u2026</option>';
+  html += '</select>';
+  return html;
+}
+function purchaseOrdersTab(){ return poListTab("created"); }
+function unpurchasedOrdersTab(){ return poListTab("unpurchased"); }
+
+function poListTab(status){
+  var list = DB.pos.filter(function(p){return p.status===status;});
+  var html = "";
+
+  if (status==="created"){
+    var unassigned = DB.items.filter(function(it){
+      var s = stockStatus(it);
+      return (s==="low"||s==="warning") && !vendorsForItem(it.id).length;
+    });
+    if (!list.length && !unassigned.length){
+      return '<div class="ds-empty">No purchase orders yet. Change quantities on the Catalog tab, then click \u201cCreate Purchase Order.\u201d</div>';
+    }
+    if (unassigned.length){
+      html += '<div class="ds-card" style="border-left:4px solid #f2b33d;"><div class="ds-card-title">Needs a vendor</div>';
+      html += '<p style="font-size:12.5px;color:#5b6b80;margin:0 0 .5rem;">These items are low but have no vendor pricing on file, so they can\u2019t be added to a purchase order yet:</p>';
+      unassigned.forEach(function(it){ html += '<div style="font-size:13px;padding:3px 0;">\u2022 '+escapeHtml(it.name)+'</div>'; });
+      html += '</div>';
+    }
+  } else if (!list.length){
+    return '<div class="ds-empty">No unpurchased orders right now. When you complete a purchase order without checking off every item, the leftovers land here.</div>';
+  }
+
+  if (list.length){
+    var grandTotal = 0;
+    list.forEach(function(po){ linesForPO(po.id).forEach(function(l){ grandTotal += l.price*l.qty; }); });
+    html += '<div class="ds-card" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">';
+    html += '<div style="font-size:13px;color:#5b6b80;">'+list.length+' order'+(list.length===1?"":"s")+' waiting to be purchased</div>';
+    html += '<div style="font-size:17px;font-weight:700;color:#13233a;">Grand total: '+fmt$(grandTotal)+'</div>';
+    html += '</div>';
+  }
+
+  list.forEach(function(po){
+    var v = vendorById(po.vendorId);
+    var lines = linesForPO(po.id);
+    var total = lines.reduce(function(s,l){return s+l.price*l.qty;},0);
+    var purchasedCount = lines.filter(function(l){return !!l.purchased;}).length;
+    html += '<div class="ds-card">';
+    html += '<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap;">';
+    html += '<div class="ds-card-title" style="margin-bottom:0;">Order #'+po.orderNumber+' \u00b7 '+escapeHtml(v?v.name:(po.vendorId===null?"No vendor assigned yet":"Unknown vendor"))+'</div>';
+    html += '<div style="font-size:11.5px;color:#7c8a9b;">'+lines.length+' item'+(lines.length===1?"":"s")+' \u00b7 created '+fmtDate(po.createdDate)+'</div>';
+    html += '</div>';
+    if (isEditingPO("phone", po.vendorId)){
+      html += '<div class="ds-tracking-row" style="margin-top:6px;"><i class="ti ti-phone" style="font-size:14px;color:#7c8a9b;" aria-hidden="true"></i><label for="pophone-'+po.id+'">Supplier phone</label><input type="text" id="pophone-'+po.id+'" data-vendor-contact="'+po.vendorId+'" value="'+escapeAttr(v?v.contact||"":"")+'" placeholder="Not on file" style="width:160px;" /></div>';
+    } else {
+      var phoneText = (v && v.contact) ? escapeHtml(v.contact) : "Not on file";
+      var phoneCls = (v && v.contact) ? "" : " ds-placeholder";
+      html += '<div class="ds-tracking-row" style="margin-top:6px;"><i class="ti ti-phone" style="font-size:14px;color:#7c8a9b;" aria-hidden="true"></i><label>Supplier phone</label><span class="ds-editable-preset'+phoneCls+'" data-action="edit-po-field" data-field="phone" data-id="'+po.vendorId+'" tabindex="0" role="button" aria-label="Edit supplier phone number">'+phoneText+'</span></div>';
+    }
+    html += '<div style="overflow-x:auto;"><table class="ds-table" style="margin-top:.5rem;"><tr><th>Item</th><th>Qty needed</th><th>Price</th><th>Purchased at</th><th>Subtotal</th><th></th><th>Purchased</th></tr>';
+    lines.forEach(function(l){
+      var it = itemById(l.itemId);
+      html += '<tr'+(l.purchased?' style="opacity:.5;"':'')+'>';
+      html += '<td><div class="ds-item-name">'+escapeHtml(it?it.name:(l.name||"Unknown item"))+'</div>' + (it&&it.specs?'<div class="ds-item-specs">'+escapeHtml(it.specs)+'</div>':'') + '</td>';
+      html += '<td>'+(isEditingPO("qty",l.id)
+        ? '<input type="number" min="1" step="1" data-line-qty="'+l.id+'" value="'+l.qty+'" style="width:60px;" />'
+        : '<span class="ds-editable-preset" data-action="edit-po-field" data-field="qty" data-id="'+l.id+'" tabindex="0" role="button" aria-label="Edit quantity needed">'+l.qty+'</span>')+'</td>';
+      html += '<td>'+(isEditingPO("price",l.id)
+        ? '<input type="number" min="0" step="0.01" data-line-price="'+l.id+'" value="'+(l.price==null?"":l.price)+'" placeholder="Not set" style="width:80px;" />'
+        : (l.price==null
+            ? '<span class="ds-editable-preset ds-placeholder" data-action="edit-po-field" data-field="price" data-id="'+l.id+'" tabindex="0" role="button" aria-label="Edit price">Not set</span>'
+            : '<span class="ds-editable-preset" data-action="edit-po-field" data-field="price" data-id="'+l.id+'" tabindex="0" role="button" aria-label="Edit price">'+fmt$(l.price)+'</span>'))+'</td>';
+      html += '<td>'+(isEditingPO("vendor",l.id)
+        ? vendorSelectHtml(l.id, po.vendorId)
+        : '<span class="ds-editable-preset" data-action="edit-po-field" data-field="vendor" data-id="'+l.id+'" tabindex="0" role="button" aria-label="Edit supplier">'+escapeHtml(v?v.name:(po.vendorId===null?"Assign vendor":"Unknown"))+'</span>')+'</td>';
+      html += '<td>'+fmt$(l.price*l.qty)+'</td>';
+      html += '<td><button data-action="remove-po-line" data-lineid="'+l.id+'" aria-label="Remove item" style="padding:4px 9px;background:#fff;border:1px solid #d8dee5;border-radius:6px;"><span aria-hidden="true" style="font-size:15px;font-weight:700;color:#b3261e;line-height:1;">\u00d7</span></button></td>';
+      html += '<td style="text-align:center;"><input type="checkbox" data-action="toggle-line-purchased" data-lineid="'+l.id+'" '+(l.purchased?'checked ':'')+'aria-label="Mark '+escapeAttr(it?it.name:"item")+' as purchased" style="width:17px;height:17px;accent-color:#1b62c4;" /></td>';
+      html += '</tr>';
+    });
+    html += '</table></div>';
+    html += '<div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;flex-wrap:wrap;gap:10px;">';
+    html += '<div style="font-size:14px;font-weight:700;color:#13233a;">Order total: '+fmt$(total)+'</div>';
+    html += '<div style="display:flex;align-items:center;gap:8px;">';
+    html += '<button class="ds-btn-outline" data-action="cancel-po" data-poid="'+po.id+'">Cancel order</button>';
+    if (v && v.website) html += '<a class="ds-order-link" href="'+escapeAttr(v.website)+'" target="_blank" rel="noopener noreferrer">Visit site <i class="ti ti-external-link" style="font-size:12px;" aria-hidden="true"></i></a>';
+    html += '</div></div>';
+    html += '<div style="margin-top:12px;padding-top:12px;border-top:1px solid #eef1f4;display:flex;align-items:center;gap:10px;flex-wrap:wrap;">';
+    html += '<button class="ds-btn-primary" data-action="complete-po" data-poid="'+po.id+'"'+(purchasedCount?'':' disabled')+' style="'+(purchasedCount?'':'opacity:.5;cursor:default;')+'">Complete Purchase Order</button>';
+    html += '<button class="ds-btn-outline" data-action="open-add-po-item" data-poid="'+po.id+'"><i class="ti ti-plus" style="font-size:13px;vertical-align:-2px;" aria-hidden="true"></i> Add item</button>';
+    if (purchasedCount) html += '<span style="font-size:11.5px;color:#7c8a9b;">'+purchasedCount+' of '+lines.length+' marked purchased</span>';
+    html += '</div>';
+    html += '</div>';
+  });
+  return html;
+}
+
+/* ============================================================
+   PURCHASED ORDERS TAB
+   ============================================================ */
+function purchasedOrdersTab(){
+  if (!DB.purchasedItems.length) return '<div class="ds-empty">Nothing purchased yet. Check items off on the Purchase Orders tab and they\u2019ll show up here.</div>';
+
+  var vendorGroups = {};
+  DB.purchasedItems.forEach(function(p){
+    (vendorGroups[p.vendorId] = vendorGroups[p.vendorId] || []).push(p);
+  });
+  var vendorIds = Object.keys(vendorGroups).sort(function(a,b){
+    var va = vendorById(a), vb = vendorById(b);
+    return (va?va.name:"").localeCompare(vb?vb.name:"");
+  });
+
+  var grandTotal = DB.purchasedItems.reduce(function(s,p){return s+p.qty*p.price;},0);
+  var html = '<div class="ds-card" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">';
+  html += '<div style="font-size:13px;color:#5b6b80;">'+DB.purchasedItems.length+' item'+(DB.purchasedItems.length===1?"":"s")+' purchased across '+vendorIds.length+' supplier'+(vendorIds.length===1?"":"s")+'</div>';
+  html += '<div style="font-size:17px;font-weight:700;color:#13233a;">Total: '+fmt$(grandTotal)+'</div>';
+  html += '</div>';
+
+  vendorIds.forEach(function(vid){
+    var v = vendorById(vid);
+    var items = vendorGroups[vid];
+
+    /* Items from the same original order, checked off on the same day,
+       are grouped into one order block. */
+    var orderGroups = {};
+    items.forEach(function(p){
+      var key = p.orderNumber + "|" + p.purchasedDate;
+      if (!orderGroups[key]) orderGroups[key] = { orderNumber: p.orderNumber, purchasedDate: p.purchasedDate, items: [] };
+      orderGroups[key].items.push(p);
+    });
+    var orderKeys = Object.keys(orderGroups).sort(function(a,b){
+      return (orderGroups[b].purchasedDate||"").localeCompare(orderGroups[a].purchasedDate||"");
+    });
+    var vendorTotal = items.reduce(function(s,p){return s+p.qty*p.price;},0);
+
+    html += '<div class="ds-card">';
+    html += '<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap;">';
+    html += '<div class="ds-card-title" style="margin-bottom:0;">'+escapeHtml(v?v.name:"Unknown vendor")+'</div>';
+    html += '<div style="font-size:11.5px;color:#7c8a9b;">'+items.length+' item'+(items.length===1?"":"s")+' \u00b7 '+orderKeys.length+' order'+(orderKeys.length===1?"":"s")+'</div>';
+    html += '</div>';
+
+    orderKeys.forEach(function(key, idx){
+      var grp = orderGroups[key];
+      var subtotal = grp.items.reduce(function(s,p){return s+p.qty*p.price;},0);
+      html += '<div style="margin-top:'+(idx===0?"10px":"16px")+';padding-top:'+(idx===0?"0":"14px")+';'+(idx===0?"":"border-top:1px solid #eef1f4;")+'">';
+      html += '<div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px;">';
+      html += '<div style="font-size:12.5px;font-weight:700;color:#13233a;">Order #'+grp.orderNumber+'</div>';
+      html += '<label style="font-size:11px;color:#7c8a9b;">Purchased <input type="date" data-group-order="'+grp.orderNumber+'" data-group-olddate="'+escapeAttr(grp.purchasedDate||"")+'" value="'+escapeAttr(grp.purchasedDate||"")+'" style="width:140px;" /></label>';
+      html += '</div>';
+      var pendingCount = grp.items.filter(function(p){return !!p.receivedPending;}).length;
+      html += '<div style="overflow-x:auto;"><table class="ds-table"><tr><th>Qty</th><th>Item</th><th>Total price paid</th><th></th><th>Received</th></tr>';
+      grp.items.forEach(function(p){
+        html += '<tr'+(p.receivedPending?' style="opacity:.5;"':'')+'>';
+        html += '<td>'+p.qty+'</td>';
+        html += '<td><div class="ds-item-name">'+escapeHtml(p.itemName)+'</div></td>';
+        html += '<td>'+fmt$(p.qty*p.price)+'</td>';
+        html += '<td><button data-action="remove-purchased-item" data-id="'+p.id+'" aria-label="Remove this purchased record" style="padding:4px 9px;background:#fff;border:1px solid #d8dee5;border-radius:6px;"><span aria-hidden="true" style="font-size:15px;font-weight:700;color:#b3261e;line-height:1;">\u00d7</span></button></td>';
+        html += '<td style="text-align:center;"><input type="checkbox" data-action="toggle-item-received" data-id="'+p.id+'" '+(p.receivedPending?'checked ':'')+'aria-label="Mark '+escapeAttr(p.itemName)+' as received" style="width:17px;height:17px;accent-color:#1b62c4;" /></td>';
+        html += '</tr>';
+      });
+      html += '</table></div>';
+      html += '<div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;flex-wrap:wrap;gap:10px;">';
+      html += '<div><button class="ds-btn-primary" data-action="confirm-group-received" data-order-number="'+grp.orderNumber+'" data-order-date="'+escapeAttr(grp.purchasedDate||"")+'"'+(pendingCount?'':' disabled')+' style="'+(pendingCount?'':'opacity:.5;cursor:default;')+'">Confirm All Received</button>';
+      if (pendingCount) html += ' <span style="font-size:11.5px;color:#7c8a9b;">'+pendingCount+' of '+grp.items.length+' checked</span>';
+      html += '</div>';
+      html += '<div style="text-align:right;font-size:12.5px;color:#5b6b80;">Order subtotal: '+fmt$(subtotal)+'</div>';
+      html += '</div>';
+      html += '</div>';
+    });
+
+    html += '<div style="text-align:right;font-size:13px;font-weight:700;color:#13233a;margin-top:14px;padding-top:10px;border-top:1px solid #e3e7ec;">Supplier total: '+fmt$(vendorTotal)+'</div>';
+    html += '</div>';
+  });
+  return html;
+}
+
+/* ============================================================
+   ORDER HISTORY TAB
+   ============================================================ */
+function daysAgoStr(days){
+  var d = new Date();
+  d.setDate(d.getDate() - days);
+  return d.toISOString().slice(0,10);
+}
+function orderHistoryTab(){
+  var html = '<div class="ds-tabs-row">';
+  [["all","All time"],["week","Last week"],["month","Past month"],["90days","Last 90 days"],["year","Last year"]].forEach(function(t){
+    var active = state.historyDateRange===t[0];
+    html += '<button class="ds-tab-pill'+(active?' active':'')+'" data-historyrange="'+t[0]+'">'+t[1]+'</button>';
+  });
+  html += '</div>';
+
+  html += '<div class="ds-tabs-row">';
+  var catPills = [["all","All categories"]];
+  CATEGORY_ORDER.forEach(function(k){ catPills.push([k, CATEGORY_LABELS[k]]); });
+  catPills.forEach(function(t){
+    var active = state.historyCategory===t[0];
+    html += '<button class="ds-tab-pill'+(active?' active':'')+'" data-historycat="'+t[0]+'">'+t[1]+'</button>';
+  });
+  html += '</div>';
+
+  html += '<div style="margin-bottom:1.1rem;"><select data-historysupplier style="font-size:13px;"><option value="all">All suppliers</option>';
+  DB.vendors.slice().sort(function(a,b){return a.name.localeCompare(b.name);}).forEach(function(v){
+    html += '<option value="'+v.id+'" '+(state.historySupplier===v.id?"selected":"")+'>'+escapeHtml(v.name)+'</option>';
+  });
+  html += '</select></div>';
+
+  var list = DB.receivedItems.slice();
+  if (state.historyDateRange!=="all"){
+    var cutoff = daysAgoStr(state.historyDateRange==="week"?7 : state.historyDateRange==="month"?30 : state.historyDateRange==="90days"?90 : 365);
+    list = list.filter(function(r){ return (r.purchasedDate||"") >= cutoff; });
+  }
+  if (state.historyCategory!=="all"){
+    list = list.filter(function(r){ var it = itemById(r.itemId); return it && it.category===state.historyCategory; });
+  }
+  if (state.historySupplier!=="all"){
+    list = list.filter(function(r){ return r.vendorId===state.historySupplier; });
+  }
+
+  if (!list.length){
+    html += '<div class="ds-empty">'+(DB.receivedItems.length ? "No received items match this filter." : "No orders received yet.")+'</div>';
+    return html;
+  }
+
+  var grandTotal = list.reduce(function(s,r){return s+r.qty*r.price;},0);
+  html += '<div class="ds-card" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">';
+  html += '<div style="font-size:13px;color:#5b6b80;">'+list.length+' item'+(list.length===1?"":"s")+' received</div>';
+  html += '<div style="font-size:17px;font-weight:700;color:#13233a;">Total: '+fmt$(grandTotal)+'</div>';
+  html += '</div>';
+
+  var vendorGroups = {};
+  list.forEach(function(r){ (vendorGroups[r.vendorId] = vendorGroups[r.vendorId] || []).push(r); });
+  var vendorIds = Object.keys(vendorGroups).sort(function(a,b){
+    var va = vendorById(a), vb = vendorById(b);
+    return (va?va.name:"").localeCompare(vb?vb.name:"");
+  });
+
+  vendorIds.forEach(function(vid){
+    var v = vendorById(vid);
+    var items = vendorGroups[vid];
+    var orderGroups = {};
+    items.forEach(function(r){
+      var key = r.orderNumber + "|" + r.purchasedDate;
+      if (!orderGroups[key]) orderGroups[key] = { orderNumber: r.orderNumber, purchasedDate: r.purchasedDate, items: [] };
+      orderGroups[key].items.push(r);
+    });
+    var orderKeys = Object.keys(orderGroups).sort(function(a,b){
+      return (orderGroups[b].purchasedDate||"").localeCompare(orderGroups[a].purchasedDate||"");
+    });
+    var vendorTotal = items.reduce(function(s,r){return s+r.qty*r.price;},0);
+
+    html += '<div class="ds-card">';
+    html += '<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap;">';
+    html += '<div class="ds-card-title" style="margin-bottom:0;">'+escapeHtml(v?v.name:"Unknown vendor")+'</div>';
+    html += '<div style="font-size:11.5px;color:#7c8a9b;">'+items.length+' item'+(items.length===1?"":"s")+' \u00b7 '+orderKeys.length+' order'+(orderKeys.length===1?"":"s")+'</div>';
+    html += '</div>';
+
+    orderKeys.forEach(function(key, idx){
+      var grp = orderGroups[key];
+      var subtotal = grp.items.reduce(function(s,r){return s+r.qty*r.price;},0);
+      html += '<div style="margin-top:'+(idx===0?"10px":"16px")+';padding-top:'+(idx===0?"0":"14px")+';'+(idx===0?"":"border-top:1px solid #eef1f4;")+'">';
+      html += '<div style="font-size:12.5px;font-weight:700;color:#13233a;margin-bottom:6px;">Order #'+grp.orderNumber+' \u00b7 purchased '+fmtDate(grp.purchasedDate)+'</div>';
+      html += '<div style="overflow-x:auto;"><table class="ds-table"><tr><th>Order #</th><th>Qty</th><th>Item</th><th>Total paid</th><th>Received</th><th></th></tr>';
+      grp.items.forEach(function(r){
+        html += '<tr><td>#'+r.orderNumber+'</td><td>'+r.qty+'</td><td><div class="ds-item-name">'+escapeHtml(r.itemName)+'</div></td><td>'+fmt$(r.qty*r.price)+'</td><td>'+fmtDate(r.receivedDate)+'</td>';
+        html += '<td><button class="ds-undo-link" data-action="undo-received" data-id="'+r.id+'">Undo</button></td></tr>';
+      });
+      html += '</table></div>';
+      html += '<div style="text-align:right;font-size:12.5px;color:#5b6b80;margin-top:6px;">Order subtotal: '+fmt$(subtotal)+'</div>';
+      html += '</div>';
+    });
+
+    html += '<div style="text-align:right;font-size:13px;font-weight:700;color:#13233a;margin-top:14px;padding-top:10px;border-top:1px solid #e3e7ec;">Supplier total: '+fmt$(vendorTotal)+'</div>';
+    html += '</div>';
+  });
+  return html;
+}
+
+/* ============================================================
+   MISSING ITEMS TAB
+   ============================================================ */
+function missingItemsTab(){
+  var missing = computeMissingLines();
+  if (!missing.length) return '<div class="ds-empty">No missing items right now.</div>';
+  var html = "";
+  missing.forEach(function(m){
+    var p = m.purchased;
+    html += '<div class="ds-card" style="border-left:4px solid #d9453c;">';
+    html += '<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap;">';
+    html += '<div><div class="ds-item-name">'+escapeHtml(m.item?m.item.name:p.itemName)+'</div>' + (m.item&&m.item.specs?'<div class="ds-item-specs">'+escapeHtml(m.item.specs)+'</div>':'') + '<div style="font-size:11.5px;color:#7c8a9b;margin-top:2px;">From order #'+p.orderNumber+' \u00b7 qty '+p.qty+'</div></div>';
+    html += '<span class="ds-badge ds-badge-low">Missing</span>';
+    html += '</div>';
+    html += '<div style="margin-top:10px;font-size:12.5px;color:#5b6b80;"><b>Vendor:</b> '+escapeHtml(m.vendor?m.vendor.name:"Unknown")+ (m.vendor&&m.vendor.website?' \u00b7 <a href="'+escapeAttr(m.vendor.website)+'" target="_blank" rel="noopener noreferrer">Visit site <i class="ti ti-external-link" style="font-size:11px;" aria-hidden="true"></i></a>':'') +'</div>';
+    html += '<div style="display:flex;align-items:center;gap:8px;margin-top:6px;"><label style="font-size:11.5px;color:#7c8a9b;" for="contact-'+p.id+'">Contact number</label><input type="text" id="contact-'+p.id+'" data-vendor-contact="'+p.vendorId+'" value="'+escapeAttr(m.vendor?m.vendor.contact||"":"")+'" placeholder="Not on file" style="width:160px;" /></div>';
+    html += '<div style="margin-top:10px;"><button class="ds-btn-outline" data-action="resolve-missing" data-id="'+p.id+'">Mark received</button></div>';
+    html += '</div>';
+  });
+  return html;
+}
+
+/* ============================================================
+   SUPPLIERS TAB
+   ============================================================ */
+function suppliersTab(){
+  var html = '<div style="display:flex;justify-content:flex-end;margin-bottom:.75rem;"><button class="ds-btn-outline" data-action="add-supplier"><i class="ti ti-plus" style="font-size:13px;vertical-align:-2px;" aria-hidden="true"></i> Add supplier</button></div>';
+  if (!DB.vendors.length){
+    html += '<div class="ds-empty">No suppliers yet.</div>';
+    return html;
+  }
+  DB.vendors.slice().sort(function(a,b){return a.name.localeCompare(b.name);}).forEach(function(v){
+    var editing = state.supplierEditing===v.id;
+    html += '<div class="ds-card">';
+    html += '<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap;">';
+    html += '<button data-action="open-supplier" data-supplier="'+v.id+'" style="all:unset;cursor:pointer;font-size:16px;font-weight:700;color:#13233a;">'+escapeHtml(v.name)+'</button>';
+    html += '<div style="display:flex;align-items:center;gap:12px;">';
+    html += '<button data-action="'+(editing?'done-edit-supplier':'edit-supplier')+'" data-supplier="'+v.id+'" style="background:none;border:none;font-size:11.5px;font-weight:600;color:#1b62c4;text-decoration:underline;padding:0;cursor:pointer;">'+(editing?'Done':'Edit info')+'</button>';
+    html += '<button data-action="remove-supplier" data-supplier="'+v.id+'" aria-label="Remove '+escapeAttr(v.name)+'" style="padding:6px 8px;background:#fff;border:1px solid #d8dee5;border-radius:6px;line-height:0;"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b3261e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2l1-12"/><path d="M9 7V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/></svg></button>';
+    html += '</div>';
+    html += '</div>';
+
+    if (editing){
+      html += '<div style="margin-top:10px;display:flex;flex-direction:column;gap:9px;max-width:420px;">';
+      html += '<label style="font-size:11px;color:#7c8a9b;">Name<input type="text" data-supplier-field="name" data-supplier="'+v.id+'" value="'+escapeAttr(v.name)+'" style="display:block;width:100%;margin-top:2px;" /></label>';
+      html += '<label style="font-size:11px;color:#7c8a9b;">Contact name<input type="text" data-supplier-field="contactName" data-supplier="'+v.id+'" value="'+escapeAttr(v.contactName||"")+'" style="display:block;width:100%;margin-top:2px;" /></label>';
+      html += '<label style="font-size:11px;color:#7c8a9b;">Website<input type="text" data-supplier-field="website" data-supplier="'+v.id+'" value="'+escapeAttr(v.website||"")+'" style="display:block;width:100%;margin-top:2px;" /></label>';
+      html += '<label style="font-size:11px;color:#7c8a9b;">Phone<input type="text" data-supplier-field="contact" data-supplier="'+v.id+'" value="'+escapeAttr(v.contact||"")+'" style="display:block;width:100%;margin-top:2px;" /></label>';
+      html += '</div>';
+    } else {
+      html += '<div style="margin-top:9px;font-size:12.5px;color:#5b6b80;display:flex;flex-direction:column;gap:5px;">';
+      html += '<div><i class="ti ti-user" style="font-size:13px;color:#7c8a9b;margin-right:6px;" aria-hidden="true"></i>'+(v.contactName?escapeHtml(v.contactName):'<span style="color:#9aa5b1;font-style:italic;">No contact on file</span>')+'</div>';
+      html += '<div><i class="ti ti-world" style="font-size:13px;color:#7c8a9b;margin-right:6px;" aria-hidden="true"></i>'+(v.website?'<a href="'+escapeAttr(v.website)+'" target="_blank" rel="noopener noreferrer">'+escapeHtml(v.website)+'</a>':'<span style="color:#9aa5b1;font-style:italic;">No website on file</span>')+'</div>';
+      html += '<div><i class="ti ti-phone" style="font-size:13px;color:#7c8a9b;margin-right:6px;" aria-hidden="true"></i>'+(v.contact?escapeHtml(v.contact):'<span style="color:#9aa5b1;font-style:italic;">No phone on file</span>')+'</div>';
+      html += '</div>';
+    }
+    html += '</div>';
+  });
+  return html;
+}
+
+/* ============================================================
+   SUPPLIER DETAIL PANEL (fullscreen drill-down)
+   ============================================================ */
+function supplierDetailPanel(){
+  var v = vendorById(state.supplierKey);
+  var html = '<div style="margin-bottom:1rem;"><button class="ds-btn-outline" data-action="back-to-suppliers"><i class="ti ti-arrow-left" style="font-size:13px;vertical-align:-2px;" aria-hidden="true"></i> Back to suppliers</button></div>';
+  if (!v){
+    return html + '<div class="ds-empty">Supplier not found.</div>';
+  }
+  html += '<div class="ds-card" style="margin-bottom:1.25rem;">';
+  html += '<div style="font-size:24px;font-weight:800;color:#13233a;margin-bottom:8px;">'+escapeHtml(v.name)+'</div>';
+  html += '<div style="display:flex;flex-wrap:wrap;gap:18px;font-size:12.5px;color:#5b6b80;">';
+  html += '<div><i class="ti ti-user" style="margin-right:5px;" aria-hidden="true"></i>'+(v.contactName?escapeHtml(v.contactName):'No contact on file')+'</div>';
+  html += '<div><i class="ti ti-world" style="margin-right:5px;" aria-hidden="true"></i>'+(v.website?'<a href="'+escapeAttr(v.website)+'" target="_blank" rel="noopener noreferrer">'+escapeHtml(v.website)+' <i class="ti ti-external-link" style="font-size:11px;" aria-hidden="true"></i></a>':'No website on file')+'</div>';
+  html += '<div><i class="ti ti-phone" style="margin-right:5px;" aria-hidden="true"></i>'+(v.contact?escapeHtml(v.contact):'No phone on file')+'</div>';
+  html += '</div></div>';
+
+  var orderGroups = {};
+  function addRecord(orderNumber, purchasedDate, itemName, qty, price, status){
+    if (!orderGroups[orderNumber]) orderGroups[orderNumber] = { orderNumber: orderNumber, purchasedDate: purchasedDate, items: [] };
+    if (!orderGroups[orderNumber].purchasedDate) orderGroups[orderNumber].purchasedDate = purchasedDate;
+    orderGroups[orderNumber].items.push({ itemName: itemName, qty: qty, price: price, status: status });
+  }
+  DB.pos.forEach(function(po){
+    if (po.vendorId!==v.id) return;
+    linesForPO(po.id).forEach(function(l){
+      var it = itemById(l.itemId);
+      addRecord(po.orderNumber, null, it?it.name:(l.name||"Unknown item"), l.qty, l.price, po.status==="created"?"Open order":"Unpurchased");
+    });
+  });
+  DB.purchasedItems.forEach(function(p){
+    if (p.vendorId!==v.id) return;
+    addRecord(p.orderNumber, p.purchasedDate, p.itemName, p.qty, p.price, "Awaiting receipt");
+  });
+  DB.receivedItems.forEach(function(r){
+    if (r.vendorId!==v.id) return;
+    addRecord(r.orderNumber, r.purchasedDate, r.itemName, r.qty, r.price, "Received");
+  });
+
+  var orderKeys = Object.keys(orderGroups).sort(function(a,b){ return parseInt(b,10)-parseInt(a,10); });
+  if (!orderKeys.length){
+    html += '<div class="ds-empty">No order history for this supplier yet.</div>';
+    return html;
+  }
+
+  html += '<div class="ds-card"><div class="ds-card-title">Order history</div>';
+  orderKeys.forEach(function(key){
+    var grp = orderGroups[key];
+    var total = grp.items.reduce(function(s,r){return s+r.qty*r.price;},0);
+    html += '<div style="margin-top:10px;padding-top:10px;border-top:1px solid #eef1f4;">';
+    html += '<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:6px;"><div style="font-size:13px;font-weight:700;color:#13233a;">Order #'+key+(grp.purchasedDate?(' · purchased '+fmtDate(grp.purchasedDate)):'')+'</div><div style="font-size:12.5px;color:#5b6b80;">'+fmt$(total)+'</div></div>';
+    html += '<div style="overflow-x:auto;"><table class="ds-table"><tr><th>Item</th><th>Qty</th><th>Price</th><th>Total</th><th>Status</th></tr>';
+    grp.items.forEach(function(r){
+      html += '<tr><td><div class="ds-item-name">'+escapeHtml(r.itemName)+'</div></td><td>'+r.qty+'</td><td>'+fmt$(r.price)+'</td><td>'+fmt$(r.qty*r.price)+'</td><td>'+escapeHtml(r.status)+'</td></tr>';
+    });
+    html += '</table></div>';
+    html += '</div>';
+  });
+  html += '</div>';
+  return html;
+}
+
+function closeModal(){
+  var el = document.getElementById("ds-modal-overlay");
+  if (el) el.remove();
+}
+
+/* ============================================================
+   ITEM ADD/EDIT MODAL — shared by Items List and Catalog
+   ============================================================ */
+/* One row of the "Vendor pricing" list: a vendor (existing, or a new one
+   typed in on the spot) paired with that vendor's price for this item. */
+function vendorPriceRowHtml(vendorId, price){
+  var vendorOptions = DB.vendors.slice().sort(function(a,b){return a.name.localeCompare(b.name);});
+  var isOther = vendorId==="__other__";
+  var html = '<div class="ds-vp-row" style="display:flex;gap:8px;align-items:flex-start;margin-bottom:8px;">';
+  html += '<div style="flex:1;">';
+  html += '<select class="ds-vp-vendor" style="width:100%;">';
+  html += '<option value="">— Select vendor —</option>';
+  vendorOptions.forEach(function(v){ html += '<option value="'+v.id+'" '+(v.id===vendorId?"selected":"")+'>'+escapeHtml(v.name)+'</option>'; });
+  html += '<option value="__other__" '+(isOther?"selected":"")+'>+ New supplier…</option>';
+  html += '</select>';
+  html += '<input type="text" class="ds-vp-vendor-other" placeholder="Supplier name" style="width:100%;margin-top:4px;'+(isOther?"":"display:none;")+'" />';
+  html += '</div>';
+  html += '<div style="width:96px;"><input type="number" min="0" step="0.01" class="ds-vp-price" placeholder="Price" value="'+(price!=null?price:"")+'" style="width:100%;" /></div>';
+  html += '<button type="button" class="ds-vp-remove" aria-label="Remove this vendor price" style="padding:8px 10px;background:#fff;border:1px solid #d8dee5;border-radius:6px;flex:0 0 auto;">×</button>';
+  html += '</div>';
+  return html;
+}
+/* Wires up the "+ Add another vendor price" button and each row's remove
+   button and vendor-select (to reveal the "New supplier" text field). Call
+   this once, right after the modal's HTML — containing #im-vp-rows and
+   #im-vp-add — is in the document. New rows are inserted directly into the
+   DOM rather than through a full re-render, so nothing else in the modal
+   loses whatever the user has already typed. */
+function bindVendorPriceRows(overlay){
+  var container = overlay.querySelector("#im-vp-rows");
+  var addBtn = overlay.querySelector("#im-vp-add");
+  if (!container || !addBtn) return;
+  function bindRow(row){
+    var sel = row.querySelector(".ds-vp-vendor");
+    var other = row.querySelector(".ds-vp-vendor-other");
+    sel.addEventListener("change", function(){
+      other.style.display = sel.value==="__other__" ? "" : "none";
+    });
+    row.querySelector(".ds-vp-remove").addEventListener("click", function(){ row.remove(); });
+  }
+  container.querySelectorAll(".ds-vp-row").forEach(bindRow);
+  addBtn.addEventListener("click", function(){
+    var wrapper = document.createElement("div");
+    wrapper.innerHTML = vendorPriceRowHtml("", null);
+    var newRow = wrapper.firstChild;
+    container.appendChild(newRow);
+    bindRow(newRow);
+  });
+}
+/* Reads every "Vendor pricing" row in the modal and replaces this item's
+   DB.itemVendors links with them — rows with no vendor chosen, or no price
+   entered, are simply skipped (that's how an item ends up with no pricing
+   on file at all). A vendor typed into "+ New supplier…" is created on the
+   spot. If a row's price differs from what that vendor was already charging
+   for this item, it's logged to DB.priceChanges — the same record the
+   Reorder tab's "price changed from X to Y" note reads from — so editing
+   prices here behaves exactly like correcting a price on a purchase order
+   line. Picking the same vendor twice keeps only the first row. */
+function saveVendorPriceRowsForItem(overlay, itemId){
+  var priorByVendor = {};
+  DB.itemVendors.filter(function(iv){return iv.itemId===itemId;}).forEach(function(iv){ priorByVendor[iv.vendorId] = iv.price; });
+  DB.itemVendors = DB.itemVendors.filter(function(iv){return iv.itemId!==itemId;});
+
+  var usedVendorIds = {};
+  overlay.querySelectorAll(".ds-vp-row").forEach(function(row){
+    var sel = row.querySelector(".ds-vp-vendor");
+    var other = row.querySelector(".ds-vp-vendor-other");
+    var priceRaw = row.querySelector(".ds-vp-price").value.trim();
+    if (priceRaw==="") return;
+    var price = Math.max(0, parseFloat(priceRaw));
+    var vendorId = sel.value;
+    if (vendorId==="__other__"){
+      var name = other.value.trim();
+      if (!name) return;
+      var newVendor = {id: uid("v"), name: name, website:"", contact:"", contactName:""};
+      DB.vendors.push(newVendor);
+      persist("vendors");
+      vendorId = newVendor.id;
+    }
+    if (!vendorId || usedVendorIds[vendorId]) return;
+    usedVendorIds[vendorId] = true;
+    var oldPrice = priorByVendor[vendorId];
+    if (oldPrice!=null && oldPrice!==price){
+      DB.priceChanges.push({id: uid("pc"), itemId: itemId, vendorId: vendorId, oldPrice: oldPrice, newPrice: price, date: todayStr()});
+    }
+    DB.itemVendors.push({id: uid("iv"), itemId: itemId, vendorId: vendorId, price: price});
+  });
+  persist("itemVendors"); persist("priceChanges");
+}
+function itemModalFieldsHtml(it){
+  var lbl = 'display:block;font-size:11.5px;color:#5b6b80;margin-bottom:2px;';
+  var html = "";
+  html += '<label style="'+lbl+'">Item name</label><input type="text" id="im-name" value="'+escapeAttr(it?it.name:"")+'" style="width:100%;margin-bottom:10px;" />';
+  html += '<label style="'+lbl+'">SKU #</label><input type="text" id="im-sku" value="'+escapeAttr(it?it.sku||"":"")+'" style="width:100%;margin-bottom:10px;" />';
+  html += '<label style="'+lbl+'">Description</label><input type="text" id="im-specs" value="'+escapeAttr(it?it.specs||"":"")+'" placeholder="e.g. 54in x 150ft (50yd)" style="width:100%;margin-bottom:10px;" />';
+  html += '<div style="display:flex;gap:10px;margin-bottom:10px;">';
+  html += '<div style="flex:1;"><label style="'+lbl+'">Unit</label><input type="text" id="im-unit" value="'+escapeAttr(it?it.unit||"":"")+'" placeholder="roll, gallon, each…" style="width:100%;" /></div>';
+  html += '<div style="flex:1;"><label style="'+lbl+'">Category</label><select id="im-category" style="width:100%;">';
+  CATEGORY_ORDER.forEach(function(ck){ html += '<option value="'+ck+'" '+(it&&it.category===ck?"selected":"")+'>'+CATEGORY_LABELS[ck]+'</option>'; });
+  html += '</select></div>';
+  html += '<div style="flex:1;"><label style="'+lbl+'">Frequency</label><select id="im-tier" style="width:100%;">';
+  Object.keys(TIERS).forEach(function(tk){ html += '<option value="'+tk+'" '+(it&&it.tier===tk?"selected":"")+'>'+TIERS[tk].label+'</option>'; });
+  html += '</select></div>';
+  html += '</div>';
+  html += '<div style="display:flex;gap:10px;margin-bottom:10px;">';
+  html += '<div style="flex:1;"><label style="'+lbl+'">On hand</label><input type="number" min="0" step="1" id="im-qty" value="'+(it?it.qty:0)+'" style="width:100%;" /></div>';
+  html += '<div style="flex:1;"><label style="'+lbl+'">Reorder at</label><input type="number" min="0" step="1" id="im-reorder" value="'+(it?it.reorder:0)+'" style="width:100%;" /></div>';
+  html += '<div style="flex:1;"><label style="'+lbl+'">To have</label><input type="number" min="0" step="1" id="im-par" value="'+(it?it.par:1)+'" style="width:100%;" /></div>';
+  html += '</div>';
+  html += '<label style="'+lbl+'">Vendor pricing</label>';
+  html += '<div id="im-vp-rows">';
+  var existingLinks = it ? vendorsForItem(it.id) : [];
+  if (existingLinks.length){
+    existingLinks.forEach(function(vp){ html += vendorPriceRowHtml(vp.vendorId, vp.price); });
+  } else {
+    html += vendorPriceRowHtml("", null);
+  }
+  html += '</div>';
+  html += '<button type="button" class="ds-btn-outline" id="im-vp-add" style="margin-bottom:10px;font-size:11.5px;padding:5px 10px;">+ Add another vendor price</button>';
+  html += '<label style="'+lbl+'">Comments</label>';
+  html += '<textarea id="im-comments" style="width:100%;height:70px;font-family:inherit;font-size:12.5px;padding:8px;border-radius:6px;border:1px solid #d8dee5;resize:vertical;">'+escapeHtml(it?it.comments||"":"")+'</textarea>';
+  return html;
+}
+function openItemModal(itemId){
+  var it = itemId ? itemById(itemId) : null;
+  var isNew = !it;
+  closeModal();
+  var overlay = document.createElement("div");
+  overlay.id = "ds-modal-overlay";
+  overlay.className = "ds-modal-overlay";
+  var html = '<div class="ds-modal" style="max-width:480px;">';
+  html += '<h2>'+(isNew?"Add item":"Edit item")+'</h2>';
+  html += itemModalFieldsHtml(it);
+  html += '<div class="ds-modal-actions" style="justify-content:space-between;">';
+  html += '<div>';
+  if (!isNew){
+    html += '<button class="ds-btn-outline" data-action="im-delete" style="color:#b3261e;border-color:#f3b7b2;">Delete item</button> ';
+    html += '<button class="ds-btn-outline" data-action="im-duplicate">Duplicate</button>';
+  }
+  html += '</div>';
+  html += '<div>';
+  html += '<button class="ds-btn-outline" data-action="im-cancel">Cancel</button> ';
+  html += '<button class="ds-btn-primary" data-action="im-save">Save</button>';
+  html += '</div>';
+  html += '</div>';
+  html += '</div>';
+  overlay.innerHTML = html;
+  document.body.appendChild(overlay);
+  bindVendorPriceRows(overlay);
+
+  overlay.querySelector('[data-action="im-cancel"]').addEventListener("click", closeModal);
+  overlay.addEventListener("click", function(e){ if (e.target===overlay) closeModal(); });
+
+  overlay.querySelector('[data-action="im-save"]').addEventListener("click", function(){
+    var name = document.getElementById("im-name").value.trim();
+    if (!name){ alert("Item name is required."); return; }
+    var fields = {
+      name: name,
+      sku: document.getElementById("im-sku").value.trim(),
+      specs: document.getElementById("im-specs").value.trim(),
+      unit: document.getElementById("im-unit").value.trim() || "each",
+      category: document.getElementById("im-category").value,
+      tier: document.getElementById("im-tier").value,
+      qty: Math.max(0, parseInt(document.getElementById("im-qty").value||"0",10)),
+      reorder: Math.max(0, parseInt(document.getElementById("im-reorder").value||"0",10)),
+      par: Math.max(0, parseInt(document.getElementById("im-par").value||"0",10)),
+      comments: document.getElementById("im-comments").value
+    };
+    var savedId;
+    if (isNew){
+      var newItem = {id: uid("i")};
+      for (var k in fields) newItem[k] = fields[k];
+      DB.items.push(newItem);
+      savedId = newItem.id;
+    } else {
+      for (var k2 in fields) it[k2] = fields[k2];
+      savedId = it.id;
+    }
+    persist("items");
+    saveVendorPriceRowsForItem(overlay, savedId);
+    closeModal();
+    render();
+  });
+
+  if (!isNew){
+    overlay.querySelector('[data-action="im-delete"]').addEventListener("click", function(){
+      if (!confirm("Delete this item? This can’t be undone.")) return;
+      DB.items = DB.items.filter(function(i){return i.id!==it.id;});
+      DB.itemVendors = DB.itemVendors.filter(function(iv){return iv.itemId!==it.id;});
+      DB.catalogedItemIds = DB.catalogedItemIds.filter(function(id){return id!==it.id;});
+      DB.poLines = DB.poLines.filter(function(l){return l.itemId!==it.id;});
+      persist("items"); persist("itemVendors"); persist("catalogedItemIds"); persist("poLines");
+      closeModal();
+      render();
+    });
+    overlay.querySelector('[data-action="im-duplicate"]').addEventListener("click", function(){
+      var copy = {};
+      for (var k in it) copy[k] = it[k];
+      copy.id = uid("i");
+      copy.name = it.name + " (copy)";
+      DB.items.push(copy);
+      persist("items");
+      /* Carry the original's vendor pricing over to the duplicate too. */
+      vendorsForItem(it.id).forEach(function(vp){
+        DB.itemVendors.push({id: uid("iv"), itemId: copy.id, vendorId: vp.vendorId, price: vp.price});
+      });
+      persist("itemVendors");
+      closeModal();
+      openItemModal(copy.id);
+    });
+  }
+}
+
+/* ============================================================
+   ADD ITEM TO A SPECIFIC PURCHASE ORDER — from the "+ Add item"
+   button at the bottom of a Purchase Orders card. Either picks an
+   existing item off the full items list and asks for a quantity, or
+   (via the "+ Add a brand new item…" option) opens the same fields
+   used everywhere else to create an item from scratch, then adds it
+   straight onto this order.
+   ============================================================ */
+function openAddPOItemModal(poId){
+  var po = poById(poId);
+  if (!po) return;
+  closeModal();
+  var itemOptions = DB.items.slice().sort(function(a,b){return a.name.localeCompare(b.name);});
+  var overlay = document.createElement("div");
+  overlay.id = "ds-modal-overlay";
+  overlay.className = "ds-modal-overlay";
+  var lbl = 'display:block;font-size:11.5px;color:#5b6b80;margin-bottom:2px;';
+
+  var html = '<div class="ds-modal" style="max-width:480px;">';
+  html += '<h2>Add item to Order #'+po.orderNumber+'</h2>';
+
+  html += '<div id="apo-existing-section">';
+  html += '<label style="'+lbl+'">Item</label>';
+  html += '<select id="apo-item-select" style="width:100%;margin-bottom:10px;"><option value="">— Select an item —</option>';
+  itemOptions.forEach(function(it){ html += '<option value="'+it.id+'">'+escapeHtml(it.name)+'</option>'; });
+  html += '<option value="__new__">+ Add a brand new item…</option>';
+  html += '</select>';
+  html += '<div id="apo-qty-wrap" style="display:none;">';
+  html += '<label style="'+lbl+'">Quantity</label>';
+  html += '<input type="number" min="1" step="1" id="apo-qty" value="1" style="width:100%;margin-bottom:10px;" />';
+  html += '</div>';
+  html += '<div class="ds-modal-actions">';
+  html += '<button class="ds-btn-outline" data-action="apo-cancel">Cancel</button> ';
+  html += '<button class="ds-btn-primary" data-action="apo-add-existing" disabled style="opacity:.5;">Add to order</button>';
+  html += '</div>';
+  html += '</div>';
+
+  html += '<div id="apo-new-section" style="display:none;">';
+  html += itemModalFieldsHtml(null);
+  html += '<label style="'+lbl+'">Quantity to order</label>';
+  html += '<input type="number" min="1" step="1" id="apo-new-qty" value="1" style="width:100%;margin-bottom:10px;" />';
+  html += '<div class="ds-modal-actions">';
+  html += '<button class="ds-btn-outline" data-action="apo-back">Back</button> ';
+  html += '<button class="ds-btn-primary" data-action="apo-save-new">Save item & add to order</button>';
+  html += '</div>';
+  html += '</div>';
+
+  html += '</div>';
+  overlay.innerHTML = html;
+  document.body.appendChild(overlay);
+  bindVendorPriceRows(overlay);
+
+  var existingSection = document.getElementById("apo-existing-section");
+  var newSection = document.getElementById("apo-new-section");
+  var select = document.getElementById("apo-item-select");
+  var qtyWrap = document.getElementById("apo-qty-wrap");
+  var addBtn = overlay.querySelector('[data-action="apo-add-existing"]');
+
+  select.addEventListener("change", function(){
+    if (select.value==="__new__"){
+      existingSection.style.display = "none";
+      newSection.style.display = "";
+    } else if (select.value===""){
+      qtyWrap.style.display = "none";
+      addBtn.disabled = true;
+      addBtn.style.opacity = ".5";
+    } else {
+      qtyWrap.style.display = "";
+      addBtn.disabled = false;
+      addBtn.style.opacity = "";
+    }
+  });
+
+  overlay.querySelector('[data-action="apo-cancel"]').addEventListener("click", closeModal);
+  overlay.addEventListener("click", function(e){ if (e.target===overlay) closeModal(); });
+
+  overlay.querySelector('[data-action="apo-back"]').addEventListener("click", function(){
+    newSection.style.display = "none";
+    existingSection.style.display = "";
+    select.value = "";
+    qtyWrap.style.display = "none";
+    addBtn.disabled = true;
+    addBtn.style.opacity = ".5";
+  });
+
+  addBtn.addEventListener("click", function(){
+    var itemId = select.value;
+    if (!itemId || itemId==="__new__") return;
+    var qty = Math.max(1, parseInt(document.getElementById("apo-qty").value||"1",10));
+    var priceForNew = null;
+    if (po.vendorId!=null){
+      var iv = DB.itemVendors.find(function(x){return x.itemId===itemId && x.vendorId===po.vendorId;});
+      if (iv) priceForNew = iv.price;
+    }
+    addOrBumpPOLine(po.id, itemId, qty, priceForNew);
+    closeModal();
+    render();
+  });
+
+  overlay.querySelector('[data-action="apo-save-new"]').addEventListener("click", function(){
+    var name = document.getElementById("im-name").value.trim();
+    if (!name){ alert("Item name is required."); return; }
+    var newItem = {
+      id: uid("i"),
+      name: name,
+      sku: document.getElementById("im-sku").value.trim(),
+      specs: document.getElementById("im-specs").value.trim(),
+      unit: document.getElementById("im-unit").value.trim() || "each",
+      category: document.getElementById("im-category").value,
+      tier: document.getElementById("im-tier").value,
+      qty: Math.max(0, parseInt(document.getElementById("im-qty").value||"0",10)),
+      reorder: Math.max(0, parseInt(document.getElementById("im-reorder").value||"0",10)),
+      par: Math.max(0, parseInt(document.getElementById("im-par").value||"0",10)),
+      comments: document.getElementById("im-comments").value
+    };
+    DB.items.push(newItem);
+    persist("items");
+    saveVendorPriceRowsForItem(overlay, newItem.id);
+
+    var qty = Math.max(1, parseInt(document.getElementById("apo-new-qty").value||"1",10));
+    /* Price the new line from the cheapest vendor entered above — the same
+       rule automatic PO grouping uses elsewhere — or leave it blank if no
+       vendor pricing was entered at all. */
+    var vs = vendorsForItem(newItem.id);
+    var priceForLine = vs.length ? vs[0].price : null;
+    addOrBumpPOLine(po.id, newItem.id, qty, priceForLine);
+    closeModal();
+    render();
+  });
+}
+
+function triggerDownload(jsonStr){
+  try{
+    var blob = new Blob([jsonStr], {type:"application/json"});
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url;
+    a.download = "got-signs-inventory-backup-"+todayStr()+".json";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(function(){ URL.revokeObjectURL(url); }, 1000);
+  }catch(e){ /* ignored \u2014 the modal below is the reliable fallback */ }
+}
+function exportData(){
+  var payload = {
+    exportedAt: todayStr(),
+    orderCounter: lsGet("orderCounter", 1000),
+    items: DB.items,
+    vendors: DB.vendors,
+    itemVendors: DB.itemVendors,
+    pos: DB.pos,
+    poLines: DB.poLines,
+    purchasedItems: DB.purchasedItems,
+    receivedItems: DB.receivedItems,
+    catalogedItemIds: DB.catalogedItemIds,
+    priceChanges: DB.priceChanges
+  };
+  var jsonStr = JSON.stringify(payload, null, 2);
+  triggerDownload(jsonStr);
+
+  closeModal();
+  var overlay = document.createElement("div");
+  overlay.id = "ds-modal-overlay";
+  overlay.className = "ds-modal-overlay";
+  overlay.innerHTML =
+    '<div class="ds-modal">' +
+      '<h2>Export data</h2>' +
+      '<p>A download may have already started. If nothing happened (common when previewing in a sandboxed view), copy the text below and save it yourself as a <b>.json</b> file, or try the download button again.</p>' +
+      '<textarea readonly id="ds-export-text"></textarea>' +
+      '<div class="ds-modal-actions">' +
+        '<button class="ds-btn-outline" data-action="modal-close">Close</button>' +
+        '<button class="ds-btn-outline" data-action="modal-copy">Copy to clipboard</button>' +
+        '<button class="ds-btn-primary" data-action="modal-download">Download .json file</button>' +
+      '</div>' +
+    '</div>';
+  document.body.appendChild(overlay);
+  document.getElementById("ds-export-text").value = jsonStr;
+  overlay.querySelector('[data-action="modal-close"]').addEventListener("click", closeModal);
+  overlay.querySelector('[data-action="modal-copy"]').addEventListener("click", function(){
+    var ta = document.getElementById("ds-export-text");
+    ta.focus(); ta.select();
+    try{
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(jsonStr);
+      else document.execCommand("copy");
+      alert("Copied to clipboard.");
+    }catch(e){ alert("Couldn't copy automatically \u2014 the text is already selected, so you can copy it manually (Ctrl/Cmd+C)."); }
+  });
+  overlay.querySelector('[data-action="modal-download"]').addEventListener("click", function(){ triggerDownload(jsonStr); });
+  overlay.addEventListener("click", function(e){ if (e.target===overlay) closeModal(); });
+}
+
+function importDataFromText(text){
+  var data;
+  try{ data = JSON.parse(text); }
+  catch(err){ alert("Couldn't read that \u2014 make sure it's a full Got Signs backup (the exact text from Export data)."); return; }
+  if (!data || !Array.isArray(data.items) || !Array.isArray(data.vendors)){
+    alert("That doesn't look like a valid Got Signs backup.");
+    return;
+  }
+  if (!confirm("Import this backup? This will replace all current data in this browser.")) return;
+  DB.items = data.items || [];
+  DB.vendors = data.vendors || [];
+  DB.itemVendors = data.itemVendors || [];
+  DB.pos = data.pos || [];
+  DB.poLines = data.poLines || [];
+  DB.purchasedItems = data.purchasedItems || [];
+  DB.receivedItems = data.receivedItems || [];
+  DB.catalogedItemIds = data.catalogedItemIds || [];
+  DB.priceChanges = data.priceChanges || [];
+  persist("items"); persist("vendors"); persist("itemVendors"); persist("pos"); persist("poLines"); persist("purchasedItems"); persist("receivedItems"); persist("catalogedItemIds"); persist("priceChanges");
+  lsSet("orderCounter", data.orderCounter || 1000);
+  lsSet("seeded_v1", true);
+  backfillOrderData();
+  closeModal();
+  state.tab = "dashboard";
+  render();
+  alert("Backup imported.");
+}
+function showImportModal(){
+  closeModal();
+  var overlay = document.createElement("div");
+  overlay.id = "ds-modal-overlay";
+  overlay.className = "ds-modal-overlay";
+  overlay.innerHTML =
+    '<div class="ds-modal">' +
+      '<h2>Import data</h2>' +
+      '<p>Paste a previously exported backup below, or choose the .json file if your browser supports it.</p>' +
+      '<textarea id="ds-import-text" placeholder="Paste exported backup JSON here\u2026"></textarea>' +
+      '<div class="ds-modal-actions">' +
+        '<button class="ds-btn-outline" data-action="modal-close">Close</button>' +
+        '<button class="ds-btn-outline" data-action="modal-choose-file">Choose file\u2026</button>' +
+        '<button class="ds-btn-primary" data-action="modal-restore">Restore</button>' +
+      '</div>' +
+    '</div>';
+  document.body.appendChild(overlay);
+  overlay.querySelector('[data-action="modal-close"]').addEventListener("click", closeModal);
+  overlay.querySelector('[data-action="modal-choose-file"]').addEventListener("click", function(){
+    var fileInput = document.createElement("input");
+    fileInput.type = "file";
+    fileInput.accept = "application/json";
+    fileInput.addEventListener("change", function(){
+      if (fileInput.files && fileInput.files[0]){
+        var reader = new FileReader();
+        reader.onload = function(e){ document.getElementById("ds-import-text").value = e.target.result; };
+        reader.readAsText(fileInput.files[0]);
+      }
+    });
+    fileInput.click();
+  });
+  overlay.querySelector('[data-action="modal-restore"]').addEventListener("click", function(){
+    importDataFromText(document.getElementById("ds-import-text").value);
+  });
+  overlay.addEventListener("click", function(e){ if (e.target===overlay) closeModal(); });
+}
+
+/* ============================================================
+   EXPENSES TAB (formerly "Monthly Budget")
+   ============================================================ */
+var MONTH_NAMES = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+var MONTH_SHORT = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+function monthKeyForOffset(offset){
+  var d = new Date();
+  d.setDate(1);
+  d.setMonth(d.getMonth()+offset);
+  return d.getFullYear() + "-" + String(d.getMonth()+1).padStart(2,"0");
+}
+function monthLabelForKey(key){
+  var parts = key.split("-");
+  return MONTH_NAMES[parseInt(parts[1],10)-1] + " " + parts[0];
+}
+function monthShortLabelForKey(key){
+  var parts = key.split("-");
+  return MONTH_SHORT[parseInt(parts[1],10)-1] + " '" + parts[0].slice(2);
+}
+function monthKeyFirstDay(key){ return key + "-01"; }
+function monthKeyLastDay(key){
+  var parts = key.split("-");
+  var y = parseInt(parts[0],10), m = parseInt(parts[1],10);
+  var d = new Date(y, m, 0);
+  return d.getFullYear() + "-" + String(d.getMonth()+1).padStart(2,"0") + "-" + String(d.getDate()).padStart(2,"0");
+}
+function expenseMonthOptions(){
+  var opts = [];
+  for (var i=-35; i<=0; i++){
+    var key = monthKeyForOffset(i);
+    opts.push({key: key, label: monthShortLabelForKey(key)});
+  }
+  return opts;
+}
+/* Resolves the current expense-tab filter mode into a concrete [dateFrom, dateTo]
+   (inclusive, ISO yyyy-mm-dd strings) plus a human label for the header. */
+function resolveExpenseRange(){
+  var mode = state.expenseMode || "pastMonth";
+  var today = todayStr();
+  if (mode==="custom"){
+    var fromKey = state.expenseCustomFrom || monthKeyForOffset(0);
+    var toKey = state.expenseCustomTo || monthKeyForOffset(0);
+    if (fromKey > toKey){ var tmp=fromKey; fromKey=toKey; toKey=tmp; }
+    var label = fromKey===toKey ? monthLabelForKey(fromKey) : (monthShortLabelForKey(fromKey)+" – "+monthShortLabelForKey(toKey));
+    return { dateFrom: monthKeyFirstDay(fromKey), dateTo: monthKeyLastDay(toKey), label: label, isSingleMonth: fromKey===toKey, fromKey: fromKey, toKey: toKey };
+  }
+  var presets = {
+    pastWeek: {days:7, label:"Past week"},
+    pastMonth: {days:30, label:"Past month"},
+    pastSixMonths: {days:182, label:"Past 6 months"},
+    pastYear: {days:365, label:"Past year"}
+  };
+  var p = presets[mode] || presets.pastMonth;
+  return { dateFrom: daysAgoStr(p.days), dateTo: today, label: p.label, isSingleMonth: false };
+}
+function computeRangeSpend(dateFrom, dateTo){
+  var entries = [];
+  DB.purchasedItems.forEach(function(p){ if ((p.purchasedDate||"")>=dateFrom && (p.purchasedDate||"")<=dateTo) entries.push(p); });
+  DB.receivedItems.forEach(function(r){ if ((r.purchasedDate||"")>=dateFrom && (r.purchasedDate||"")<=dateTo) entries.push(r); });
+
+  var byCategory = {};
+  CATEGORY_ORDER.forEach(function(c){ byCategory[c] = {qty:0, total:0}; });
+  var grandTotal = 0;
+  entries.forEach(function(e){
+    var it = itemById(e.itemId);
+    var subtotal = e.qty*e.price;
+    grandTotal += subtotal;
+    var cat = it ? it.category : null;
+    if (cat && byCategory[cat]){ byCategory[cat].qty += e.qty; byCategory[cat].total += subtotal; }
+  });
+
+  var orderGroups = {};
+  entries.forEach(function(e){
+    var key = e.orderNumber+"|"+e.purchasedDate;
+    if (!orderGroups[key]) orderGroups[key] = { orderNumber: e.orderNumber, vendorId: e.vendorId, purchasedDate: e.purchasedDate, total: 0 };
+    orderGroups[key].total += e.qty*e.price;
+  });
+  var orders = Object.keys(orderGroups).map(function(k){ return orderGroups[k]; });
+
+  return { entries: entries, orders: orders, byCategory: byCategory, grandTotal: grandTotal };
+}
+function budgetTab(){
+  var range = resolveExpenseRange();
+  var data = computeRangeSpend(range.dateFrom, range.dateTo);
+  var budgetTarget = parseFloat(lsGet("monthlyBudgetTarget", 0)) || 0;
+  var mode = state.expenseMode || "pastMonth";
+
+  var html = '<div class="ds-tabs-row">';
+  [["pastWeek","Past week"],["pastMonth","Past month"],["pastSixMonths","Past 6 months"],["pastYear","Past year"],["custom","Custom range"]].forEach(function(t){
+    var active = mode===t[0];
+    html += '<button class="ds-tab-pill'+(active?' active':'')+'" data-expensemode="'+t[0]+'">'+t[1]+'</button>';
+  });
+  html += '</div>';
+
+  if (mode==="custom"){
+    var opts = expenseMonthOptions();
+    var fromKey = state.expenseCustomFrom || monthKeyForOffset(0);
+    var toKey = state.expenseCustomTo || monthKeyForOffset(0);
+    html += '<div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:1rem;flex-wrap:wrap;">';
+    html += '<label style="font-size:11.5px;color:#7c8a9b;">From <select data-expense-from style="margin-left:4px;">';
+    opts.forEach(function(o){ html += '<option value="'+o.key+'" '+(o.key===fromKey?"selected":"")+'>'+o.label+'</option>'; });
+    html += '</select></label>';
+    html += '<label style="font-size:11.5px;color:#7c8a9b;">to <select data-expense-to style="margin-left:4px;">';
+    opts.forEach(function(o){ html += '<option value="'+o.key+'" '+(o.key===toKey?"selected":"")+'>'+o.label+'</option>'; });
+    html += '</select></label>';
+    html += '</div>';
+  }
+
+  html += '<div style="text-align:center;font-size:15px;font-weight:700;color:#13233a;margin-bottom:1rem;">'+escapeHtml(range.label)+'</div>';
+
+  html += '<div class="ds-card" style="text-align:center;">';
+  html += '<div style="font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#7c8a9b;margin-bottom:4px;">Total spent</div>';
+  html += '<div style="font-size:34px;font-weight:800;color:#13233a;">'+fmt$(data.grandTotal)+'</div>';
+  if (budgetTarget>0 && range.isSingleMonth){
+    var pct = Math.min(100, (data.grandTotal/budgetTarget)*100);
+    var over = data.grandTotal>budgetTarget;
+    var barColor = over ? "#d9453c" : (pct>85 ? "#f2b33d" : "#2f9757");
+    html += '<div style="height:10px;background:#eef1f4;border-radius:6px;overflow:hidden;margin:14px auto 8px;max-width:340px;"><div style="height:100%;width:'+pct+'%;background:'+barColor+';"></div></div>';
+    html += '<div style="font-size:12.5px;color:'+(over?'#b3261e':'#5b6b80')+';">' + (over
+      ? fmt$(data.grandTotal-budgetTarget)+' over your '+fmt$(budgetTarget)+' budget'
+      : fmt$(budgetTarget-data.grandTotal)+' left of your '+fmt$(budgetTarget)+' budget') + '</div>';
+  }
+  html += '<div style="margin-top:14px;display:flex;align-items:center;justify-content:center;gap:8px;">';
+  html += '<label style="font-size:11.5px;color:#7c8a9b;" for="budget-target-input">Monthly budget target</label>';
+  html += '<input type="number" min="0" step="1" id="budget-target-input" data-action="set-budget-target" value="'+(budgetTarget>0?budgetTarget:"")+'" placeholder="Not set" style="width:110px;text-align:center;" />';
+  html += '</div>';
+  if (budgetTarget>0 && !range.isSingleMonth) html += '<div style="font-size:11px;color:#9aa5b1;margin-top:6px;">Shown only when viewing a single month</div>';
+  html += '</div>';
+
+  if (!data.entries.length){
+    html += '<div class="ds-empty">No purchases recorded for '+escapeHtml(range.label)+' yet.</div>';
+    return html;
+  }
+
+  html += '<div class="ds-card"><div class="ds-card-title">Spending by category</div>';
+  CATEGORY_ORDER.forEach(function(key){
+    var c = data.byCategory[key];
+    var pct = data.grandTotal>0 ? (c.total/data.grandTotal*100) : 0;
+    var isOpen = !!state.budgetExpanded[key];
+    html += '<div style="margin-bottom:14px;">';
+    html += '<button type="button" data-action="toggle-budget-category" data-category="'+key+'" style="all:unset;cursor:pointer;display:block;width:100%;box-sizing:border-box;" aria-expanded="'+(isOpen?"true":"false")+'">';
+    html += '<div style="display:flex;justify-content:space-between;align-items:baseline;font-size:13.5px;margin-bottom:4px;"><span style="color:#13233a;font-weight:600;">'+(c.qty>0?'<i class="ti '+(isOpen?"ti-chevron-down":"ti-chevron-right")+'" style="font-size:12px;vertical-align:-1px;margin-right:3px;color:#7c8a9b;" aria-hidden="true"></i>':'')+c.qty+' '+CATEGORY_LABELS[key].toLowerCase()+' ordered</span><span style="font-weight:700;color:#13233a;">'+fmt$(c.total)+'</span></div>';
+    html += '<div style="height:8px;background:#eef1f4;border-radius:5px;overflow:hidden;"><div style="height:100%;width:'+pct+'%;background:#1b62c4;"></div></div>';
+    html += '</button>';
+    if (isOpen && c.qty>0){
+      var catEntries = data.entries.filter(function(e){ var it = itemById(e.itemId); return it && it.category===key; });
+      html += '<div style="overflow-x:auto;margin-top:8px;"><table class="ds-table"><tr><th>Item</th><th>Qty</th><th>Price</th><th>Total</th><th>Vendor</th><th>Date</th></tr>';
+      catEntries.sort(function(a,b){return (b.purchasedDate||"").localeCompare(a.purchasedDate||"");}).forEach(function(e){
+        var v = vendorById(e.vendorId);
+        html += '<tr><td><div class="ds-item-name">'+escapeHtml(e.itemName)+'</div></td><td>'+e.qty+'</td><td>'+fmt$(e.price)+'</td><td>'+fmt$(e.qty*e.price)+'</td><td>'+escapeHtml(v?v.name:"Unknown")+'</td><td>'+fmtDate(e.purchasedDate)+'</td></tr>';
+      });
+      html += '</table></div>';
+    }
+    html += '</div>';
+  });
+  html += '</div>';
+
+  html += '<div class="ds-card"><div class="ds-card-title">Orders in this range</div>';
+  html += '<div style="overflow-x:auto;"><table class="ds-table"><tr><th>Order</th><th>Vendor</th><th>Purchased</th><th>Total</th></tr>';
+  data.orders.slice().sort(function(a,b){return (a.purchasedDate||"").localeCompare(b.purchasedDate||"");}).forEach(function(g){
+    var v = vendorById(g.vendorId);
+    var orderKey = g.orderNumber + "|" + g.purchasedDate;
+    var isOpen = !!state.budgetExpandedOrders[orderKey];
+    html += '<tr class="ds-clickable-row" data-action="toggle-budget-order" data-order-number="'+g.orderNumber+'" data-order-date="'+escapeAttr(g.purchasedDate)+'">';
+    html += '<td><i class="ti '+(isOpen?"ti-chevron-down":"ti-chevron-right")+'" style="font-size:12px;vertical-align:-1px;margin-right:4px;color:#7c8a9b;" aria-hidden="true"></i>#'+g.orderNumber+'</td>';
+    html += '<td>'+escapeHtml(v?v.name:"Unknown")+'</td><td>'+fmtDate(g.purchasedDate)+'</td><td>'+fmt$(g.total)+'</td></tr>';
+    if (isOpen){
+      var orderEntries = data.entries.filter(function(e){ return e.orderNumber===g.orderNumber && e.purchasedDate===g.purchasedDate; });
+      html += '<tr><td colspan="4" style="padding:0 0 10px;background:#f8fafb;">';
+      html += '<table class="ds-table" style="margin:0 0 0 20px;width:calc(100% - 20px);"><tr><th>Item</th><th>Qty</th><th>Price</th><th>Total</th></tr>';
+      orderEntries.forEach(function(e){
+        html += '<tr><td><div class="ds-item-name">'+escapeHtml(e.itemName)+'</div></td><td>'+e.qty+'</td><td>'+fmt$(e.price)+'</td><td>'+fmt$(e.qty*e.price)+'</td></tr>';
+      });
+      html += '</table></td></tr>';
+    }
+  });
+  html += '</table></div></div>';
+
+  return html;
+}
+
+/* ============================================================
+   INSTRUCTIONS TAB
+   ============================================================ */
+var INSTRUCTIONS_SECTIONS = [
+  { title: "Getting started", icon:"ti-flag-3", html:
+    '<p>This app tracks everything your shop keeps on hand \u2014 vinyl, supplies, substrates, and hardware \u2014 tells you what\u2019s running low, drafts purchase orders at the cheapest available price, and follows each order all the way through to landing on your shelf.</p>' +
+    '<p><b>Everything you type is saved automatically</b> in this browser as you go. There\u2019s no save button, and nothing is sent anywhere else.</p>' +
+    '<p>The everyday loop looks like this:</p>' +
+    '<ol style="margin:0;padding-left:1.2rem;font-size:13px;color:#445063;line-height:1.7;">' +
+      '<li><b>Count</b> what\u2019s on the shelf (Catalog) \u2014 correct the numbers, then check each item off to confirm it\u2019s verified</li>' +
+      '<li><b>Create the purchase order</b> from the cataloged items (Catalog \u2192 Create Purchase Order)</li>' +
+      '<li><b>Check off</b> what you actually buy, then <b>complete</b> the order (Purchase Orders)</li>' +
+      '<li><b>Check off</b> what\u2019s physically arrived (Orders Placed)</li>' +
+      '<li><b>Follow up</b> on anything left unpurchased (Recommended Orders)</li>' +
+      '<li><b>Chase down</b> anything that didn\u2019t show up (Missing Items)</li>' +
+    '</ol>'
+  },
+  { title: "Dashboard", icon:"ti-layout-dashboard", html:
+    '<p>The landing page. Three colored buttons across the top show how many items are <b>Low stock</b>, <b>Running low</b>, and <b>In stock</b> \u2014 click any of them to jump straight to a filtered Items List.</p>' +
+    '<p>Below that, four boxes (Vinyls, Supplies, Substrates, Hardware) flip open into a full-screen view of every item in that category, with its unit, on-hand and ideal quantities, status, and frequency.</p>' +
+    '<p>"Inventory last taken" shows the date you last updated a quantity on the Catalog tab. The <b>Take Inventory</b> button jumps straight there.</p>' +
+    '<p>If anything is flagged missing from a delivery, a red banner appears up top listing what and how many \u2014 tap it to go straight to Missing Items.</p>' +
+    '<p><b>Export data</b> and <b>Import data</b> are your backup tools \u2014 see "Your data & backups" below.</p>'
+  },
+  { title: "Items List", icon:"ti-list-numbers", html:
+    '<p>Every item you carry, automatically sorted by urgency \u2014 the things that need attention soonest are at the top.</p>' +
+    '<p>Filter by <b>Frequency</b> (Weekly / Monthly / Quarterly) and <b>Category</b> at the same time, or use the status pills to show only Low stock / Running low / In stock. Search narrows it further.</p>' +
+    '<p>Every field here is directly editable: name, frequency, category, on-hand quantity, reorder-at point, and <b>To Have</b> \u2014 the ideal quantity you want fully stocked. Use <b>+ Add item</b> to add something brand new to your catalog \u2014 <b>Vendor pricing</b> is optional; leave it blank and add a supplier and price later, either on the item itself or right on the purchase order. Add more than one supplier\u2019s price and the cheapest one is what shows here and gets used when building orders.</p>'
+  },
+  { title: "Catalog", icon:"ti-clipboard-list", html:
+    '<p>This is the page for physically counting stock \u2014 what the Take Inventory button sends you to. Filter by category and/or frequency, or search by name.</p>' +
+    '<p>Each item shows its on-hand quantity, editable right there, followed by <b>"of X"</b> \u2014 the ideal quantity, which is also editable on this page.</p>' +
+    '<p>Editing any on-hand quantity here updates the "Inventory last taken" date shown on the Dashboard. Each item also has a checkbox \u2014 check it once you\u2019ve physically counted that item and confirmed the number shown is correct. A checked item is highlighted green and counted in the "items verified today" total at the top.</p>' +
+    '<p>When you\u2019re done counting, click <b>Create Purchase Order</b>. Every checked item that still needs restocking gets ordered, grouped by its cheapest priced vendor (creating a new order per vendor if needed) \u2014 a checked item that\u2019s already fully stocked is simply left alone. Anything that needs ordering but has no vendor priced on file yet still gets added \u2014 grouped into its own order with a blank price \u2014 so you can assign a supplier and price right there on the Purchase Orders tab. Checking the box is only a confirmation, not an automatic order \u2014 it clears once you create the order.</p>'
+  },
+  { title: "Reorder", icon:"ti-shopping-cart", html:
+    '<p>Lists everything at or below its reorder point, most urgent first. For each item, every supplier that carries it is listed with their price, cheapest marked <b>Best price</b> \u2014 click through to open that supplier\u2019s website directly and place the order yourself.</p>' +
+    '<p><b>Add to Purchase Order</b> puts that item straight onto an order for its cheapest-priced supplier \u2014 it joins an existing open order for that vendor if there is one, or starts a new one. If it\u2019s already on an open order, a note says so.</p>'
+  },
+  { title: "Purchase Orders", icon:"ti-file-invoice", html:
+    '<p>Orders created from the Catalog tab (or from Reorder\u2019s <b>Add to Purchase Order</b> button) land here, one card per vendor, each with its own <b>Order #</b> and the supplier\u2019s phone number right at the top (editable).</p>' +
+    '<p>Click any value to edit it: quantity, price, or which supplier it\u2019s assigned to (pick from the dropdown, or choose <b>+ Other</b> to add a brand-new supplier on the spot). Correcting a price here also updates that supplier\u2019s price for that item going forward, everywhere in the app, and notes which supplier\u2019s price changed. An item added with no price yet shows "Not set" until you fill one in.</p>' +
+    '<p><b>+ Add item</b> at the bottom of an order lets you pick anything already on file and a quantity, or add a brand-new item on the spot with the same details (and vendor pricing) you\u2019d enter on the Items List.</p>' +
+    '<p>As you actually buy items, check their <b>Purchased</b> box \u2014 instead of disappearing, the row just turns more transparent so you can see what\u2019s done and what\u2019s left. When you\u2019re finished shopping that order, click <b>Complete Purchase Order</b>: everything checked off moves into Orders Placed, and anything left unchecked moves to Recommended Orders. <b>Cancel order</b> removes one you\u2019ve decided not to place at all.</p>'
+  },
+  { title: "Orders Placed", icon:"ti-receipt", html:
+    '<p>A running receipt log, grouped by supplier. Items completed from the same original order on the same day are grouped together into one order block with a single shared, editable purchase date.</p>' +
+    '<p>Check an item\u2019s <b>Received</b> box once it physically arrives \u2014 that\u2019s the moment it actually gets added to your on-hand stock count, and it moves over to Order History.</p>'
+  },
+  { title: "Recommended Orders", icon:"ti-file-alert", html:
+    '<p>Whatever was left unchecked when a purchase order was completed lands here \u2014 items that are still low in stock but weren\u2019t bought yet. It works exactly like Purchase Orders: edit quantity, price, or vendor, check off <b>Purchased</b> as you buy them (rows turn transparent the same way), and click <b>Complete Purchase Order</b> to send the purchased ones to Orders Placed. Anything still unchecked simply stays here.</p>'
+  },
+  { title: "Order History", icon:"ti-history", html:
+    '<p>Every item you\u2019ve ever received, grouped by supplier and then by the order it came from. <b>Undo</b> reverses a mistake and subtracts the quantity back out of stock.</p>' +
+    '<p>Filter by date (<b>last week</b>, <b>past month</b>, <b>last 90 days</b>, <b>last year</b>, or all time), by <b>category</b>, and by <b>supplier</b> \u2014 all three combine together, so you can narrow down to exactly what you\u2019re looking for.</p>'
+  },
+  { title: "Missing Items", icon:"ti-alert-triangle", html:
+    '<p>If some items from an order (same order, same purchase day) have been received while others haven\u2019t shown up yet, those still-missing ones land here automatically.</p>' +
+    '<p>Each entry shows the supplier, a link to their site, and an editable phone number so you can follow up. <b>Mark received</b> resolves it once it finally arrives.</p>'
+  },
+  { title: "Suppliers", icon:"ti-users", html:
+    '<p>Your vendor list, one card per supplier. Click a supplier\u2019s name to open its full detail page \u2014 contact info at the top, and every purchase order ever placed with them below (order #, date purchased, item, quantity, price). Click <b>Edit info</b> in the top right of a card to change name, contact, website, or phone. <b>+ Add supplier</b> adds a new one; the trash icon removes one (and its item pricing along with it).</p>'
+  },
+  { title: "Expenses", icon:"ti-wallet", html:
+    '<p>Automatically totals everything marked Purchased or further along \u2014 nothing to enter by hand. Pick a quick range (<b>Past week</b>, <b>Past month</b>, <b>Past 6 months</b>, <b>Past year</b>) or <b>Custom range</b> to choose specific from/to months (e.g. Aug \u201926 to Aug \u201926 shows just August 2026; Aug \u201926 to Dec \u201926 shows everything purchased from August 1 through December 31).</p>' +
+    '<p>Shows total spend broken down by category (e.g. "14 vinyls ordered \u2014 $23,000") \u2014 click any category row to expand it and see every individual item behind that total, with quantity, price, supplier, and date. Click it again to collapse.</p>' +
+    '<p>Set an optional monthly budget target to see how much you have left, or how far over you are \u2014 shown only while viewing a single month.</p>'
+  },
+  { title: "Your data & backups", icon:"ti-database", html:
+    '<p>Everything is saved automatically in this browser\u2019s storage as you work \u2014 no separate save step. But that storage is tied to this specific browser and file, so it can be lost if you clear browser data, switch devices, or open a different copy of this file.</p>' +
+    '<p>Use <b>Export data</b> on the Dashboard regularly to save a full backup, and <b>Import data</b> to restore it. Whenever you\u2019re about to switch to a newer version of this app, export first, then import into the new one \u2014 that\u2019s how everything carries over.</p>'
+  }
+];
+function instructionsTab(){
+  var html = '<p style="font-size:13px;color:#5b6b80;margin:0 0 1.25rem;">A quick reference for what each part of the app does and how they fit together.</p>';
+  INSTRUCTIONS_SECTIONS.forEach(function(s){
+    html += '<div class="ds-card">';
+    html += '<div style="display:flex;align-items:center;gap:9px;margin-bottom:.6rem;"><i class="ti '+s.icon+'" style="font-size:17px;color:#1b62c4;" aria-hidden="true"></i><div style="font-size:14.5px;font-weight:700;color:#13233a;">'+s.title+'</div></div>';
+    html += '<div style="font-size:13px;color:#445063;line-height:1.6;">'+s.html+'</div>';
+    html += '</div>';
+  });
+  return html;
+}
+
+/* ============================================================
+   EVENT BINDING
+   ============================================================ */
+function bindEvents(){
+  var root = document.getElementById("ds-root");
+
+  var printBtn = root.querySelector('[data-action="print-page"]');
+  if (printBtn) printBtn.addEventListener("click", function(){ window.print(); });
+
+  if (state.tab==="dashboard"){
+    root.querySelectorAll('[data-action="status-filter"]').forEach(function(b){
+      b.addEventListener("click", function(){
+        state.statusFilter = b.getAttribute("data-status");
+        state.freqFilter = "all";
+        state.tab = "frequency";
+        render();
+      });
+    });
+    root.querySelectorAll('[data-action="open-category"]').forEach(function(b){
+      b.addEventListener("click", function(){
+        var key = b.getAttribute("data-category");
+        b.classList.add("flipping-out");
+        var done = false;
+        function go(){ if (done) return; done = true; state.categoryKey = key; state.tab = "category"; render(); }
+        b.addEventListener("transitionend", go, {once:true});
+        setTimeout(go, 260);
+      });
+    });
+    var gotoMissing = root.querySelector('[data-action="goto-missing"]');
+    if (gotoMissing) gotoMissing.addEventListener("click", function(e){ e.preventDefault(); state.tab="missingItems"; render(); });
+    var gotoCatalog = root.querySelector('[data-action="goto-catalog"]');
+    if (gotoCatalog) gotoCatalog.addEventListener("click", function(){ state.tab="catalog"; render(); });
+    var exportBtn = root.querySelector('[data-action="export-data"]');
+    if (exportBtn) exportBtn.addEventListener("click", exportData);
+    var triggerImport = root.querySelector('[data-action="trigger-import"]');
+    if (triggerImport) triggerImport.addEventListener("click", showImportModal);
+  }
+
+  if (state.tab==="category"){
+    var back = root.querySelector('[data-action="back-to-dashboard"]');
+    if (back) back.addEventListener("click", function(){ state.tab="dashboard"; render(); });
+  }
+
+  if (state.tab==="supplierDetail"){
+    var backSup = root.querySelector('[data-action="back-to-suppliers"]');
+    if (backSup) backSup.addEventListener("click", function(){ state.tab="suppliers"; state.supplierKey=null; render(); });
+  }
+
+  if (state.tab==="frequency"){
+    root.querySelectorAll("[data-freqtab]").forEach(function(b){
+      b.addEventListener("click", function(){ state.freqFilter = b.getAttribute("data-freqtab"); render(); });
+    });
+    root.querySelectorAll("[data-ilcat]").forEach(function(b){
+      b.addEventListener("click", function(){ state.itemsListCategory = b.getAttribute("data-ilcat"); render(); });
+    });
+    root.querySelectorAll("[data-statustab]").forEach(function(b){
+      b.addEventListener("click", function(){
+        var v = b.getAttribute("data-statustab");
+        state.statusFilter = (v==="all") ? null : v;
+        render();
+      });
+    });
+    var ilSearch = root.querySelector("[data-il-search]");
+    if (ilSearch) ilSearch.addEventListener("input", function(){
+      state.search = ilSearch.value;
+      renderMain();
+      var main = document.getElementById("ds-main");
+      var inp = main.querySelector("[data-il-search]");
+      if (inp){ inp.focus(); var v=inp.value; inp.value=""; inp.value=v; }
+    });
+    var addListItem = root.querySelector('[data-action="add-list-item"]');
+    if (addListItem) addListItem.addEventListener("click", function(){ openItemModal(null); });
+    root.querySelectorAll('[data-action="edit-list-item"]').forEach(function(b){
+      b.addEventListener("click", function(){ openItemModal(b.getAttribute("data-item")); });
+    });
+  }
+
+  if (state.tab==="catalog"){
+    root.querySelectorAll("[data-catalogtab]").forEach(function(b){
+      b.addEventListener("click", function(){ state.catalogTab = b.getAttribute("data-catalogtab"); render(); });
+    });
+    root.querySelectorAll("[data-catalogfreq]").forEach(function(b){
+      b.addEventListener("click", function(){ state.catalogFreq = b.getAttribute("data-catalogfreq"); render(); });
+    });
+    var searchInp = root.querySelector("[data-catalog-search]");
+    if (searchInp) searchInp.addEventListener("input", function(){
+      state.search = searchInp.value;
+      renderMain();
+      var main = document.getElementById("ds-main");
+      var inp = main.querySelector("[data-catalog-search]");
+      if (inp){ inp.focus(); var v=inp.value; inp.value=""; inp.value=v; }
+    });
+    root.querySelectorAll("[data-qty]").forEach(function(inp){
+      inp.addEventListener("change", function(){
+        var it = itemById(inp.getAttribute("data-qty"));
+        if (it){
+          it.qty = Math.max(0, parseInt(inp.value||"0",10));
+          persist("items");
+          lsSet("lastInventoryDate", todayStr());
+          renderMain();
+        }
+      });
+    });
+    root.querySelectorAll("[data-ideal]").forEach(function(inp){
+      inp.addEventListener("change", function(){
+        var it = itemById(inp.getAttribute("data-ideal"));
+        if (it){ it.par = Math.max(0, parseInt(inp.value||"0",10)); persist("items"); }
+      });
+    });
+    root.querySelectorAll('[data-action="toggle-catalog-verified"]').forEach(function(cb){
+      cb.addEventListener("change", function(){
+        toggleCatalogVerified(cb.getAttribute("data-item"), cb.checked);
+        renderMain();
+      });
+    });
+    var createPoBtn = root.querySelector('[data-action="create-po-from-catalog"]');
+    if (createPoBtn) createPoBtn.addEventListener("click", createPurchaseOrderFromCatalog);
+    var catalogAddBtn = root.querySelector('[data-action="catalog-add-item"]');
+    if (catalogAddBtn) catalogAddBtn.addEventListener("click", function(){ openItemModal(null); });
+    root.querySelectorAll('[data-action="catalog-edit-item"]').forEach(function(b){
+      b.addEventListener("click", function(){ openItemModal(b.getAttribute("data-item")); });
+    });
+  }
+
+  if (state.tab==="reorder"){
+    root.querySelectorAll("[data-reordersort]").forEach(function(b){
+      b.addEventListener("click", function(){ state.reorderSort = b.getAttribute("data-reordersort"); render(); });
+    });
+    root.querySelectorAll('[data-action="add-to-po"]').forEach(function(b){
+      b.addEventListener("click", function(){ addItemToPurchaseOrder(b.getAttribute("data-item")); });
+    });
+  }
+
+  if (state.tab==="purchaseOrders" || state.tab==="unpurchasedOrders"){
+    root.querySelectorAll('[data-action="cancel-po"]').forEach(function(b){
+      b.addEventListener("click", function(){ cancelCreatedPO(b.getAttribute("data-poid")); });
+    });
+
+    root.querySelectorAll('[data-action="edit-po-field"]').forEach(function(el){
+      function activate(){
+        var field = el.getAttribute("data-field"), id = el.getAttribute("data-id");
+        state.poEditing = {field: field, id: id};
+        renderMain();
+        var sel = field==="qty" ? '[data-line-qty="'+id+'"]' : field==="price" ? '[data-line-price="'+id+'"]' : field==="vendor" ? '[data-line-vendor="'+id+'"]' : '[data-vendor-contact="'+id+'"]';
+        var target = document.querySelector(sel);
+        if (target){ target.focus(); if (target.select) target.select(); }
+      }
+      el.addEventListener("click", activate);
+      el.addEventListener("keydown", function(e){ if (e.key==="Enter" || e.key===" "){ e.preventDefault(); activate(); } });
+    });
+
+    root.querySelectorAll('[data-line-qty]').forEach(function(inp){
+      inp.addEventListener("change", function(){
+        var line = DB.poLines.find(function(l){return l.id===inp.getAttribute("data-line-qty");});
+        if (line) line.qty = Math.max(1, parseInt(inp.value||"1",10));
+        persist("poLines"); state.poEditing = null; renderMain();
+      });
+      inp.addEventListener("blur", function(){
+        if (isEditingPO("qty", inp.getAttribute("data-line-qty"))){ state.poEditing = null; renderMain(); }
+      });
+    });
+    root.querySelectorAll('[data-line-price]').forEach(function(inp){
+      inp.addEventListener("change", function(){
+        var line = DB.poLines.find(function(l){return l.id===inp.getAttribute("data-line-price");});
+        if (line){
+          var newPrice = Math.max(0, parseFloat(inp.value||"0"));
+          line.price = newPrice;
+          var linePO = poById(line.poId);
+          /* Only record this as a supplier's price if a real vendor is assigned —
+             a line still sitting in the "no vendor assigned yet" group has no
+             vendor to attach a price to. */
+          if (linePO && linePO.vendorId!=null) updateVendorPriceForLine(line.itemId, linePO.vendorId, newPrice);
+        }
+        persist("poLines"); state.poEditing = null; renderMain();
+      });
+      inp.addEventListener("blur", function(){
+        if (isEditingPO("price", inp.getAttribute("data-line-price"))){ state.poEditing = null; renderMain(); }
+      });
+    });
+    root.querySelectorAll('[data-line-vendor]').forEach(function(sel){
+      sel.addEventListener("change", function(){
+        var lineId = sel.getAttribute("data-line-vendor");
+        state.poEditing = null;
+        if (sel.value==="__other__"){
+          var name = prompt("New supplier name:");
+          if (name) addNewVendorAndMoveLine(lineId, name);
+          else render();
+        } else {
+          moveLineToVendor(lineId, sel.value);
+        }
+      });
+      sel.addEventListener("blur", function(){
+        if (isEditingPO("vendor", sel.getAttribute("data-line-vendor"))){ state.poEditing = null; renderMain(); }
+      });
+    });
+    root.querySelectorAll('[data-action="remove-po-line"]').forEach(function(b){
+      b.addEventListener("click", function(){ removePOLine(b.getAttribute("data-lineid")); });
+    });
+    root.querySelectorAll('[data-action="toggle-line-purchased"]').forEach(function(cb){
+      cb.addEventListener("change", function(){
+        var line = DB.poLines.find(function(l){return l.id===cb.getAttribute("data-lineid");});
+        if (line){
+          line.purchased = cb.checked;
+          line.purchasedOnDate = cb.checked ? todayStr() : null;
+          persist("poLines");
+        }
+        renderMain();
+      });
+    });
+    root.querySelectorAll('[data-action="complete-po"]').forEach(function(b){
+      b.addEventListener("click", function(){ completePurchaseOrder(b.getAttribute("data-poid")); });
+    });
+    root.querySelectorAll('[data-action="open-add-po-item"]').forEach(function(b){
+      b.addEventListener("click", function(){ openAddPOItemModal(b.getAttribute("data-poid")); });
+    });
+    root.querySelectorAll('[data-vendor-contact]').forEach(function(inp){
+      inp.addEventListener("change", function(){
+        updateVendorContact(inp.getAttribute("data-vendor-contact"), inp.value);
+        state.poEditing = null; renderMain();
+      });
+      inp.addEventListener("blur", function(){
+        if (isEditingPO("phone", inp.getAttribute("data-vendor-contact"))){ state.poEditing = null; renderMain(); }
+      });
+    });
+  }
+
+  if (state.tab==="pendingOrders"){
+    root.querySelectorAll('[data-group-order]').forEach(function(inp){
+      inp.addEventListener("change", function(){
+        var orderNumber = parseInt(inp.getAttribute("data-group-order"),10);
+        var oldDate = inp.getAttribute("data-group-olddate");
+        updatePurchasedDateGroup(orderNumber, oldDate, inp.value);
+      });
+    });
+    root.querySelectorAll('[data-action="remove-purchased-item"]').forEach(function(b){
+      b.addEventListener("click", function(){ removePurchasedItem(b.getAttribute("data-id")); });
+    });
+    root.querySelectorAll('[data-action="toggle-item-received"]').forEach(function(cb){
+      cb.addEventListener("change", function(){
+        var p = DB.purchasedItems.find(function(x){return x.id===cb.getAttribute("data-id");});
+        if (p){ p.receivedPending = cb.checked; persist("purchasedItems"); }
+        renderMain();
+      });
+    });
+    root.querySelectorAll('[data-action="confirm-group-received"]').forEach(function(b){
+      b.addEventListener("click", function(){
+        confirmGroupReceived(parseInt(b.getAttribute("data-order-number"),10), b.getAttribute("data-order-date"));
+      });
+    });
+  }
+
+  if (state.tab==="ordersReceived"){
+    root.querySelectorAll('[data-action="undo-received"]').forEach(function(b){
+      b.addEventListener("click", function(){ undoItemReceived(b.getAttribute("data-id")); });
+    });
+    root.querySelectorAll("[data-historyrange]").forEach(function(b){
+      b.addEventListener("click", function(){ state.historyDateRange = b.getAttribute("data-historyrange"); render(); });
+    });
+    root.querySelectorAll("[data-historycat]").forEach(function(b){
+      b.addEventListener("click", function(){ state.historyCategory = b.getAttribute("data-historycat"); render(); });
+    });
+    var supplierSel = root.querySelector("[data-historysupplier]");
+    if (supplierSel) supplierSel.addEventListener("change", function(){ state.historySupplier = supplierSel.value; render(); });
+  }
+
+  if (state.tab==="missingItems"){
+    root.querySelectorAll('[data-action="resolve-missing"]').forEach(function(b){
+      b.addEventListener("click", function(){ markItemReceived(b.getAttribute("data-id")); });
+    });
+    root.querySelectorAll('[data-vendor-contact]').forEach(function(inp){
+      inp.addEventListener("change", function(){ updateVendorContact(inp.getAttribute("data-vendor-contact"), inp.value); });
+    });
+  }
+
+  if (state.tab==="suppliers"){
+    var addSupplier = root.querySelector('[data-action="add-supplier"]');
+    if (addSupplier) addSupplier.addEventListener("click", function(){
+      var name = prompt("Supplier name:");
+      if (!name) return;
+      DB.vendors.push({id: uid("v"), name:name, website:"", contact:"", contactName:""});
+      persist("vendors"); render();
+    });
+    root.querySelectorAll('[data-action="open-supplier"]').forEach(function(b){
+      b.addEventListener("click", function(){
+        state.supplierKey = b.getAttribute("data-supplier");
+        state.tab = "supplierDetail";
+        render();
+      });
+    });
+    root.querySelectorAll('[data-action="edit-supplier"]').forEach(function(b){
+      b.addEventListener("click", function(){ state.supplierEditing = b.getAttribute("data-supplier"); render(); });
+    });
+    root.querySelectorAll('[data-action="done-edit-supplier"]').forEach(function(b){
+      b.addEventListener("click", function(){ state.supplierEditing = null; render(); });
+    });
+    root.querySelectorAll('[data-supplier-field]').forEach(function(inp){
+      inp.addEventListener("change", function(){
+        var v = vendorById(inp.getAttribute("data-supplier"));
+        if (v){ v[inp.getAttribute("data-supplier-field")] = inp.value; persist("vendors"); render(); }
+      });
+    });
+    root.querySelectorAll('[data-action="remove-supplier"]').forEach(function(b){
+      b.addEventListener("click", function(){
+        var id = b.getAttribute("data-supplier");
+        if (!confirm("Remove this supplier? This will also remove their pricing links to items.")) return;
+        DB.vendors = DB.vendors.filter(function(v){return v.id!==id;});
+        DB.itemVendors = DB.itemVendors.filter(function(iv){return iv.vendorId!==id;});
+        persist("vendors"); persist("itemVendors"); render();
+      });
+    });
+  }
+
+  if (state.tab==="budget"){
+    root.querySelectorAll("[data-expensemode]").forEach(function(b){
+      b.addEventListener("click", function(){ state.expenseMode = b.getAttribute("data-expensemode"); render(); });
+    });
+    var expFrom = root.querySelector("[data-expense-from]");
+    if (expFrom) expFrom.addEventListener("change", function(){ state.expenseCustomFrom = expFrom.value; render(); });
+    var expTo = root.querySelector("[data-expense-to]");
+    if (expTo) expTo.addEventListener("change", function(){ state.expenseCustomTo = expTo.value; render(); });
+    var targetInp = root.querySelector('[data-action="set-budget-target"]');
+    if (targetInp) targetInp.addEventListener("change", function(){
+      lsSet("monthlyBudgetTarget", Math.max(0, parseFloat(targetInp.value||"0")));
+      render();
+    });
+    root.querySelectorAll('[data-action="toggle-budget-category"]').forEach(function(b){
+      b.addEventListener("click", function(){
+        var key = b.getAttribute("data-category");
+        state.budgetExpanded[key] = !state.budgetExpanded[key];
+        render();
+      });
+    });
+    root.querySelectorAll('[data-action="toggle-budget-order"]').forEach(function(tr){
+      tr.addEventListener("click", function(){
+        var key = tr.getAttribute("data-order-number") + "|" + tr.getAttribute("data-order-date");
+        state.budgetExpandedOrders[key] = !state.budgetExpandedOrders[key];
+        render();
+      });
+    });
+  }
+}
+
+/* ---------------- boot ---------------- */
+loadDB();
+render();
+if (!storageWorks) showSaveWarning();
+
+})();
+</script>
+</body>
+</html>
