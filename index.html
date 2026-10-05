@@ -537,7 +537,10 @@ function defaultSystemInfo(){
       {date:"2026-09-09", note:"Popups now only close via the X button or Escape, never a stray click on the backdrop; one-time cleanup to clear out leftover test data."},
       {date:"2026-09-28", note:"Fractions/decimals accepted in every quantity field; Price Tracking tab (was Reorder) charts price changes instead of reorder needs; cancelled orders now show in Order History; vendor invoice numbers; New Purchase Order from scratch; Items List CSV export/import; real names instead of raw emails or “info”; Orders/Items Received now log to the Activity Log; click straight through to edit an item wherever the app says it needs a vendor; this System Info tab; Safari print-performance fix; corrected “Alex” to be the administrator's real account (info@xtickers.com), not just a placeholder label."},
       {date:"2026-09-28", note:"Undo (Order History) now asks for confirmation and logs to the Activity Log; creating a purchase order no longer skips a checked item just because it's already fully stocked — it's added with a quantity of 1 instead; Order History's filters renamed to Past orders (received) / Cancelled orders / All orders."},
-      {date:"2026-09-28", note:"Fixed a bug where an item sitting in Orders Placed could silently get flagged Missing on a later reload just because another item from the same order number had already been received (this is what caused unexpected Missing Items to show up, including after using Undo). The one-time cleanup that used to run on every load now only runs once, ever."}
+      {date:"2026-09-28", note:"Fixed a bug where an item sitting in Orders Placed could silently get flagged Missing on a later reload just because another item from the same order number had already been received (this is what caused unexpected Missing Items to show up, including after using Undo). The one-time cleanup that used to run on every load now only runs once, ever."},
+      {date:"2026-10-05", note:"Quantity fields are now decimal-only: typing .7 becomes 0.7, and letters, symbols, and fractions like 1/2 are no longer accepted (type 0.5 instead)."},
+      {date:"2026-10-05", note:"Fixed items showing “Running low” (and offering Add to PO) when on hand already equals the To have amount — Running low now only applies while you’re still short of To have."},
+      {date:"2026-10-05", note:"Suppliers tab now has a search box (matches name, contact, website, or phone)."}
     ],
     loginNotes: "Cloud sync (optional — the app works fine without it, just local to that one device/browser) uses Firebase sign-in with accounts set up for the “got-signs” Firebase project:\n• Alex — info@xtickers.com. The administrator/owner account, a regular user like anyone else — just also the boss.\n• Monica — signs in with her own email (the one starting with “monica@” that was set up for her in the Firebase console)\n• Andres — aagreda887@gmail.com\nAny device can instead tap “Continue offline on this device” on first load to skip sign-in and stay local-only — that's the shared shop device, and by default it's logged in the app as “Alex” too, since he's the one who owns that device. Passwords aren’t stored anywhere in this app; each person keeps their own. To add, remove, or reset a login, sign in to the Firebase console (console.firebase.google.com) → got-signs project → Authentication → Users.",
     hostingNotes: "The live app is a single self-contained HTML file (no server or database of its own) hosted for free on GitHub Pages:\n• Site: https://aagreda887.github.io/\n• Repo: github.com/aagreda887/aagreda887.github.io — the file is index.html at the root\nTo publish an update: sign in to GitHub as aagreda887, open that repo, then “Add file” → “Upload files” and replace index.html with the new version. GitHub Pages redeploys automatically, usually within a minute or two — no build step, nothing else to configure.\nMoving to a different host: because it's just one HTML file with no server dependency, it runs on literally any static host — Netlify, Vercel, a different GitHub repo's Pages, or a folder on an ordinary web server. Upload index.html there and it works immediately. The only piece that needs its own setup elsewhere is cross-device cloud sync, which is tied to the Firebase project described under Database recovery below — the app works fully without it, just local to whichever device/browser has the data.",
@@ -766,26 +769,15 @@ function escapeHtml(s){ return String(s==null?"":s).replace(/[&<>]/g, function(c
 function escapeAttr(s){ return escapeHtml(s).replace(/"/g,"&quot;"); }
 
 /* Quantity fields (on hand, reorder point, par/"to have", PO quantities) are
-   plain text inputs so they can take fractions someone might actually think
-   in — "1/2" or "2 1/2" — as well as ordinary decimals like 2.5. Parses to a
-   plain number; returns NaN if the text isn't a recognizable quantity. */
+   decimal-only: digits and a single decimal point. A leading point is fine —
+   typing ".7" is read (and redisplayed) as "0.7". Fractions like "1/2" are
+   not accepted; type 0.5 instead. Returns NaN if the text isn't a
+   recognizable decimal quantity. */
 function parseQty(str){
   if (str==null) return NaN;
   str = String(str).trim();
   if (!str) return NaN;
-  var mixed = str.match(/^(\d+)\s+(\d+)\s*\/\s*(\d+)$/);
-  if (mixed){
-    var whole = parseFloat(mixed[1]), num = parseFloat(mixed[2]), den = parseFloat(mixed[3]);
-    if (!den) return NaN;
-    return whole + (num/den);
-  }
-  var frac = str.match(/^(\d+)\s*\/\s*(\d+)$/);
-  if (frac){
-    var n2 = parseFloat(frac[1]), d2 = parseFloat(frac[2]);
-    if (!d2) return NaN;
-    return n2/d2;
-  }
-  if (/^\d+(\.\d+)?$/.test(str)) return parseFloat(str);
+  if (/^(\d+\.?\d*|\.\d+)$/.test(str)) return parseFloat(str);
   return NaN;
 }
 /* Same parse, but falls back to a default (instead of NaN) for save-time
@@ -795,22 +787,37 @@ function qtyOrDefault(str, def){
   return isNaN(v) ? def : v;
 }
 /* Clean decimal string for redisplaying a parsed quantity — rounds away
-   floating-point noise (1/3 → 0.3333) and drops trailing zeros. */
+   floating-point noise and drops trailing zeros. */
 function formatQty(n){
   var r = Math.round(n*10000)/10000;
   return String(r);
 }
-/* Wires blur-time normalization onto a text quantity input: whatever the
-   user typed (fraction, mixed number, or decimal) gets replaced with a
-   clean decimal once they leave the field. Invalid text falls back to min. */
+/* Strips anything that isn't a digit or a decimal point as the user types,
+   and keeps only the first decimal point. */
+function cleanQtyText(text){
+  var t = String(text).replace(/[^0-9.]/g, "");
+  var firstDot = t.indexOf(".");
+  if (firstDot > -1) t = t.slice(0, firstDot+1) + t.slice(firstDot+1).replace(/\./g, "");
+  return t;
+}
+/* Wires decimal-only behavior onto a text quantity input: non-numeric
+   characters are rejected as they're typed, and once the user finishes
+   (change/blur) the text is replaced with a clean decimal — ".7" becomes
+   "0.7". Empty or invalid text falls back to min. */
 function bindQtyInput(el, min){
   if (min==null) min = 0;
   el.setAttribute("inputmode", "decimal");
-  el.addEventListener("blur", function(){
+  el.addEventListener("input", function(){
+    var cleaned = cleanQtyText(el.value);
+    if (cleaned !== el.value) el.value = cleaned;
+  });
+  function normalize(){
     var v = parseQty(el.value);
     if (isNaN(v) || v<min) v = min;
     el.value = formatQty(v);
-  });
+  }
+  el.addEventListener("change", normalize);
+  el.addEventListener("blur", normalize);
 }
 
 /* Maps a raw identity (a cloud-sync login email, or the literal "info" that
@@ -846,7 +853,10 @@ function logActivity(type, summary){
 
 function stockStatus(it){
   if (it.qty <= it.reorder) return "low";
-  if (it.qty <= it.reorder + Math.max(1, Math.round((it.par-it.reorder)*0.4))) return "warning";
+  /* "Running low" only applies while you're still short of your ideal
+     ("To have") amount — an item sitting at or above it is fully stocked,
+     however close its count is to the reorder point. */
+  if (it.qty < it.par && it.qty <= it.reorder + Math.max(1, Math.round((it.par-it.reorder)*0.4))) return "warning";
   return "optimal";
 }
 function statusRank(s){ return s==="low"?0:(s==="warning"?1:2); }
@@ -2550,12 +2560,23 @@ function missingItemsTab(){
    SUPPLIERS TAB
    ============================================================ */
 function suppliersTab(){
-  var html = '<div style="display:flex;justify-content:flex-end;margin-bottom:.75rem;"><button class="ds-btn-outline" data-action="add-supplier"><i class="ti ti-plus" style="font-size:13px;vertical-align:-2px;" aria-hidden="true"></i> Add supplier</button></div>';
+  var html = '<div class="ds-searchbar"><input type="text" placeholder="Search suppliers\u2026" data-supplier-search value="'+escapeAttr(state.search)+'" aria-label="Search suppliers" /><button class="ds-btn-outline" data-action="add-supplier"><i class="ti ti-plus" style="font-size:13px;vertical-align:-2px;" aria-hidden="true"></i> Add supplier</button></div>';
   if (!DB.vendors.length){
     html += '<div class="ds-empty">No suppliers yet.</div>';
     return html;
   }
-  DB.vendors.slice().sort(function(a,b){return a.name.localeCompare(b.name);}).forEach(function(v){
+  var supplierList = DB.vendors.slice();
+  if (state.search){
+    var q = state.search.toLowerCase();
+    supplierList = supplierList.filter(function(v){
+      return [v.name, v.contactName, v.website, v.contact].some(function(f){ return f && String(f).toLowerCase().indexOf(q)>-1; });
+    });
+  }
+  if (!supplierList.length){
+    html += '<div class="ds-empty">No suppliers match \u201c'+escapeHtml(state.search)+'\u201d.</div>';
+    return html;
+  }
+  supplierList.sort(function(a,b){return a.name.localeCompare(b.name);}).forEach(function(v){
     var editing = state.supplierEditing===v.id;
     html += '<div class="ds-card">';
     html += '<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap;">';
@@ -3700,6 +3721,7 @@ function bindEvents(){
     });
 
     root.querySelectorAll('[data-line-qty]').forEach(function(inp){
+      bindQtyInput(inp, 0);
       inp.addEventListener("change", function(){
         var line = DB.poLines.find(function(l){return l.id===inp.getAttribute("data-line-qty");});
         if (line){
@@ -3880,6 +3902,14 @@ function bindEvents(){
   }
 
   if (state.tab==="suppliers"){
+    var supSearch = root.querySelector("[data-supplier-search]");
+    if (supSearch) supSearch.addEventListener("input", function(){
+      state.search = supSearch.value;
+      renderMain();
+      var main = document.getElementById("ds-main");
+      var inp = main.querySelector("[data-supplier-search]");
+      if (inp){ inp.focus(); var v=inp.value; inp.value=""; inp.value=v; }
+    });
     var addSupplier = root.querySelector('[data-action="add-supplier"]');
     if (addSupplier) addSupplier.addEventListener("click", function(){
       var name = prompt("Supplier name:");
